@@ -1,0 +1,257 @@
+.footer1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-gainsboro-200);
+  width: 1440px;
+  height: 92px;
+}
+.aboutUs,
+.contactUs,
+.learn,
+.support {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 142px;
+}
+.aboutUs,
+.contactUs,
+.support {
+  left: 320px;
+}
+.aboutUs,
+.contactUs {
+  left: 161px;
+}
+.contactUs {
+  left: 488px;
+}
+.footer,
+.footerTags {
+  position: absolute;
+  top: 31px;
+  left: 405px;
+  width: 630px;
+  height: 25px;
+}
+.footer {
+  top: 932px;
+  left: 0;
+  width: 1440px;
+  height: 92px;
+}
+.registerBackgroundChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-15xl);
+  background-color: var(--color-gainsboro-200);
+  width: 582px;
+  height: 674px;
+}
+.signIn {
+  position: absolute;
+  top: 103.79px;
+  left: 225px;
+  display: inline-block;
+  width: 132.59px;
+  height: 31.71px;
+}
+.registerBackgroundItem {
+  position: absolute;
+  top: 544px;
+  left: 340px;
+  border-radius: var(--br-15xl);
+  background-color: var(--color-white);
+  width: 171px;
+  height: 86px;
+  cursor: pointer;
+}
+.registerBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 582px;
+  height: 674px;
+  font-size: var(--font-size-11xl);
+}
+.groupChild,
+.registerButtonChild {
+  position: absolute;
+  border-radius: var(--br-15xl);
+}
+.groupChild {
+  top: 544px;
+  left: 92px;
+  background-color: var(--color-white);
+  width: 171px;
+  height: 86px;
+  cursor: pointer;
+}
+.registerButtonChild {
+  top: 0;
+  left: 0;
+  background-color: var(--color-darkcyan-100);
+  width: 157px;
+  height: 36.95px;
+}
+.signIn1 {
+  position: absolute;
+  top: 6.72px;
+  left: 8px;
+  display: inline-block;
+  width: 142px;
+  height: 30.23px;
+  cursor: pointer;
+}
+.registerButton {
+  position: absolute;
+  top: 400.82px;
+  left: 211px;
+  width: 157px;
+  height: 36.95px;
+  color: var(--color-white);
+}
+.passwordChild {
+  position: absolute;
+  top: 33.71px;
+  left: -1px;
+  border-radius: var(--br-15xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25) inset;
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 453px;
+  height: 56.86px;
+}
+.password1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 283.11px;
+  height: 34.71px;
+}
+.password {
+  position: absolute;
+  top: 277.66px;
+  left: 64px;
+  width: 451px;
+  height: 89.57px;
+  text-align: left;
+  font-size: var(--font-size-9xl);
+}
+.emailChild {
+  top: 33.71px;
+  left: -1px;
+  border-radius: var(--br-15xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25) inset;
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 450px;
+  height: 56.86px;
+}
+.email,
+.email1,
+.emailChild {
+  position: absolute;
+}
+.email1 {
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 119.65px;
+  height: 34.71px;
+}
+.email {
+  top: 154.5px;
+  left: 67px;
+  width: 448px;
+  height: 89.57px;
+  text-align: left;
+  font-size: var(--font-size-9xl);
+}
+.apple,
+.google {
+  position: absolute;
+  top: 577px;
+  left: 146px;
+  display: inline-block;
+  width: 117px;
+  height: 31px;
+}
+.apple {
+  left: 393px;
+}
+.blocktradeLogo51 {
+  position: absolute;
+  top: 559px;
+  left: 104px;
+  border-radius: var(--br-15xl);
+  width: 53px;
+  height: 56px;
+  object-fit: cover;
+}
+.or,
+.registerBackgroundParent {
+  position: absolute;
+  top: 167px;
+  left: 434px;
+  width: 582px;
+  height: 674px;
+}
+.or {
+  top: 635px;
+  left: 492px;
+  display: inline-block;
+  width: 470px;
+  height: 54px;
+}
+.yellowIllustrationCateringL {
+  position: absolute;
+  top: 718px;
+  left: 784px;
+  width: 54px;
+  height: 67px;
+  object-fit: cover;
+}
+.login,
+.signInWith {
+  position: absolute;
+  width: 150px;
+  height: 27px;
+}
+.signInWith {
+  top: 0;
+  left: 0;
+  display: inline-block;
+}
+.login {
+  top: 675px;
+  left: 645px;
+}
+.signUp {
+  text-decoration: underline;
+}
+.dontHaveAnContainer {
+  position: absolute;
+  top: 868px;
+  left: 448px;
+  display: inline-block;
+  width: 554px;
+  height: 26px;
+}
+.loginPage {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-6xl);
+  color: var(--color-black);
+  font-family: var(--font-josefin-sans);
+}

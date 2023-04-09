@@ -1,0 +1,275 @@
+.navigationBarIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 165px;
+}
+.blocktradeLogo61 {
+  position: absolute;
+  top: 21px;
+  left: 1261px;
+  width: 161px;
+  height: 124px;
+  object-fit: cover;
+}
+.clientApplicationDashboardChild {
+  position: absolute;
+  top: 159px;
+  left: 0;
+  background-color: var(--color-gainsboro-200);
+  width: 405px;
+  height: 865px;
+}
+.clientApplicationDashboardInner {
+  position: absolute;
+  top: 158.91px;
+  left: -0.55px;
+  border-top: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 1441.1px;
+  height: 1px;
+}
+.ellipseIcon,
+.rectangleDiv {
+  position: absolute;
+  top: 50px;
+  left: 1358px;
+  width: 15px;
+  height: 15px;
+}
+.rectangleDiv {
+  top: 198px;
+  left: 21px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-gainsboro-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25) inset;
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 363px;
+  height: 59px;
+}
+.searchOrType {
+  position: absolute;
+  top: 217px;
+  left: 46px;
+  color: var(--color-gray-200);
+  text-align: center;
+  display: inline-block;
+  width: 313px;
+  height: 33px;
+}
+.yellowIllustrationCateringL {
+  position: absolute;
+  top: 27px;
+  left: 42px;
+  border-radius: var(--br-3xs);
+  width: 126px;
+  height: 102px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.grep {
+  margin: 0;
+}
+.grepELicensing,
+.homeActsContainer {
+  position: absolute;
+  display: inline-block;
+}
+.grepELicensing {
+  top: 49px;
+  left: 178px;
+  font-size: var(--font-size-16xl);
+  width: 286.66px;
+  height: 30px;
+}
+.homeActsContainer {
+  top: 305px;
+  left: 44px;
+  width: 315px;
+  height: 616px;
+}
+.yellowIllustrationCateringL1,
+.yellowIllustrationCateringL2 {
+  position: absolute;
+  top: 409px;
+  left: 330px;
+  width: 24px;
+  height: 18px;
+  object-fit: cover;
+}
+.yellowIllustrationCateringL2 {
+  top: 507px;
+}
+.myApplications {
+  position: absolute;
+  top: calc(50% - 276px);
+  left: 465px;
+  font-size: 48px;
+  display: inline-block;
+  width: 381px;
+  height: 36px;
+}
+.clientApplicationDashboardChild1 {
+  position: absolute;
+  top: 316px;
+  left: 437px;
+  border-radius: 31px;
+  background-color: #f8f4f4;
+  width: 960px;
+  height: 644px;
+}
+.clientApplicationDashboardChild2 {
+  position: absolute;
+  top: 341px;
+  left: 471px;
+  background-color: var(--color-white);
+  width: 395px;
+  height: 37px;
+}
+.image1Icon,
+.image1Wrapper {
+  position: absolute;
+  width: 28px;
+  height: 27px;
+}
+.image1Icon {
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+.image1Wrapper {
+  top: 346px;
+  left: 480px;
+  overflow: hidden;
+}
+.searchApplications {
+  position: absolute;
+  top: 347px;
+  left: 520px;
+  font-size: var(--font-size-5xl);
+  display: flex;
+  align-items: center;
+  width: 265px;
+  height: 26px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.lastEdited,
+.name,
+.status {
+  position: absolute;
+  top: 449px;
+  left: 491px;
+  font-weight: 500;
+  display: inline-block;
+  width: 97px;
+  height: 25px;
+}
+.lastEdited,
+.status {
+  top: 446px;
+  left: 884px;
+  width: 113px;
+  height: 22px;
+}
+.lastEdited {
+  top: 449px;
+  left: 1051px;
+  width: 169px;
+  height: 19px;
+}
+.companyName1 {
+  left: 127px;
+  width: 222px;
+}
+.approved,
+.april12023,
+.companyName1 {
+  position: absolute;
+  top: 15px;
+  display: inline-block;
+  height: 27px;
+}
+.april12023 {
+  left: 565px;
+  font-size: var(--font-size-xl);
+  font-weight: 300;
+  width: 259px;
+}
+.approved {
+  left: 412px;
+  color: var(--color-gray-300);
+  width: 116px;
+}
+.frameChild {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 65px;
+  height: 58px;
+  object-fit: cover;
+}
+.companyName1Parent {
+  position: absolute;
+  top: 512px;
+  left: 480px;
+  background-color: var(--color-whitesmoke-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 868px;
+  height: 57px;
+  overflow: hidden;
+}
+.approved1 {
+  position: absolute;
+  top: 15px;
+  left: 412px;
+  color: var(--color-gray-300);
+  display: inline-block;
+  width: 128px;
+  height: 27px;
+}
+.companyName2Parent,
+.companyName3Parent {
+  position: absolute;
+  top: 592px;
+  left: 480px;
+  background-color: var(--color-whitesmoke-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 868px;
+  height: 57px;
+  overflow: hidden;
+}
+.companyName3Parent {
+  top: 672px;
+}
+.approved3 {
+  position: absolute;
+  top: 15px;
+  left: 412px;
+  color: var(--color-gray-300);
+  display: inline-block;
+  width: 137px;
+  height: 27px;
+}
+.companyName4Parent {
+  position: absolute;
+  top: 752px;
+  left: 480px;
+  background-color: var(--color-whitesmoke-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 868px;
+  height: 57px;
+  overflow: hidden;
+}
+.clientApplicationDashboard {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-6xl);
+  color: var(--color-black);
+  font-family: var(--font-josefin-sans);
+}

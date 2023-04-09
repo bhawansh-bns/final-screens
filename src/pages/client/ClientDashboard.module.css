@@ -1,0 +1,184 @@
+.navigationBarIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 165px;
+}
+.blocktradeLogo61 {
+  position: absolute;
+  top: 21px;
+  left: 1261px;
+  width: 161px;
+  height: 124px;
+  object-fit: cover;
+}
+.clientDashboardChild {
+  position: absolute;
+  top: 159px;
+  left: 0;
+  background-color: var(--color-gainsboro-200);
+  width: 405px;
+  height: 865px;
+}
+.clientDashboardInner {
+  position: absolute;
+  top: 158.91px;
+  left: -0.55px;
+  border-top: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 1441.1px;
+  height: 1px;
+}
+.ellipseIcon,
+.rectangleDiv {
+  position: absolute;
+  top: 50px;
+  left: 1358px;
+  width: 15px;
+  height: 15px;
+}
+.rectangleDiv {
+  top: 198px;
+  left: 21px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-gainsboro-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25) inset;
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 363px;
+  height: 59px;
+}
+.searchOrType {
+  position: absolute;
+  top: 217px;
+  left: 46px;
+  color: var(--color-gray-200);
+  text-align: center;
+  display: inline-block;
+  width: 313px;
+  height: 33px;
+}
+.yellowIllustrationCateringL {
+  position: absolute;
+  top: 27px;
+  left: 42px;
+  border-radius: var(--br-3xs);
+  width: 126px;
+  height: 102px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.grep {
+  margin: 0;
+}
+.grepELicensing,
+.homeActsContainer {
+  position: absolute;
+  display: inline-block;
+}
+.grepELicensing {
+  top: 49px;
+  left: 178px;
+  font-size: var(--font-size-16xl);
+  width: 286.66px;
+  height: 30px;
+}
+.homeActsContainer {
+  top: 305px;
+  left: 44px;
+  width: 315px;
+  height: 616px;
+}
+.screenshot20230307At542,
+.yellowIllustrationCateringL1,
+.yellowIllustrationCateringL2 {
+  position: absolute;
+  top: 409px;
+  left: 330px;
+  width: 24px;
+  height: 18px;
+  object-fit: cover;
+}
+.screenshot20230307At542,
+.yellowIllustrationCateringL2 {
+  top: 507px;
+}
+.screenshot20230307At542 {
+  top: 294px;
+  left: 465px;
+  border-radius: var(--br-xl);
+  width: 844px;
+  height: 595px;
+}
+.clientDashboardChild1 {
+  position: absolute;
+  top: 451px;
+  left: 589px;
+  background-color: var(--color-gray-100);
+  width: 76px;
+  height: 65px;
+  cursor: pointer;
+}
+.dashboard,
+.div,
+.reviewers {
+  position: absolute;
+  display: inline-block;
+}
+.div {
+  top: 451px;
+  left: 627px;
+  font-size: var(--font-size-46xl);
+  font-family: var(--font-inter);
+  width: 56px;
+  height: 51px;
+}
+.dashboard,
+.reviewers {
+  top: 236px;
+  left: 465px;
+  font-size: var(--font-size-16xl);
+  width: 378px;
+  height: 91px;
+}
+.reviewers {
+  top: 243px;
+  left: 1023px;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  width: 143px;
+  height: 39px;
+}
+.clientDashboardChild2 {
+  position: absolute;
+  top: 404px;
+  left: 1130px;
+  border-radius: var(--br-5xl);
+  background-color: var(--color-darkgray);
+  width: 133px;
+  height: 47px;
+}
+.upload {
+  position: absolute;
+  top: 413px;
+  left: 1156px;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  display: inline-block;
+  width: 95px;
+  height: 25px;
+}
+.clientDashboard {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-6xl);
+  color: var(--color-black);
+  font-family: var(--font-josefin-sans);
+}

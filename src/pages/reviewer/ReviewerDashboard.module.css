@@ -1,0 +1,360 @@
+.re {
+  position: absolute;
+  top: 232px;
+  left: 961px;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  display: inline-block;
+  width: 248px;
+  height: 51px;
+}
+.navigationBarIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 165px;
+}
+.blocktradeLogo61 {
+  position: absolute;
+  top: 21px;
+  left: 1261px;
+  width: 161px;
+  height: 124px;
+  object-fit: cover;
+}
+.reviewerDashboardChild {
+  position: absolute;
+  top: 159px;
+  left: 0;
+  background-color: var(--color-gainsboro-200);
+  width: 405px;
+  height: 865px;
+}
+.reviewerDashboardInner {
+  position: absolute;
+  top: 158.91px;
+  left: -0.55px;
+  border-top: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 1441.1px;
+  height: 1px;
+}
+.ellipseIcon,
+.rectangleDiv {
+  position: absolute;
+  top: 50px;
+  left: 1358px;
+  width: 15px;
+  height: 15px;
+}
+.rectangleDiv {
+  top: 198px;
+  left: 21px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-gainsboro-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25) inset;
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 363px;
+  height: 59px;
+}
+.searchOrType {
+  position: absolute;
+  top: 217px;
+  left: 46px;
+  color: var(--color-gray-200);
+  text-align: center;
+  display: inline-block;
+  width: 313px;
+  height: 33px;
+}
+.yellowIllustrationCateringL {
+  position: absolute;
+  top: 27px;
+  left: 42px;
+  border-radius: var(--br-3xs);
+  width: 126px;
+  height: 102px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.grep {
+  margin: 0;
+}
+.grepELicensing,
+.homeActsContainer {
+  position: absolute;
+  display: inline-block;
+}
+.grepELicensing {
+  top: 49px;
+  left: 178px;
+  font-size: var(--font-size-16xl);
+  width: 286.66px;
+  height: 30px;
+}
+.homeActsContainer {
+  top: 305px;
+  left: 44px;
+  width: 315px;
+  height: 616px;
+}
+.yellowIllustrationCateringL1,
+.yellowIllustrationCateringL2 {
+  position: absolute;
+  top: 409px;
+  left: 330px;
+  width: 24px;
+  height: 18px;
+  object-fit: cover;
+}
+.yellowIllustrationCateringL2 {
+  top: 507px;
+}
+.applications {
+  position: absolute;
+  top: 236px;
+  left: 465px;
+  font-size: var(--font-size-21xl);
+  display: inline-block;
+  width: 378px;
+  height: 91px;
+}
+.reviewerDashboardChild1,
+.reviewerDashboardChild2 {
+  position: absolute;
+  top: 328px;
+  left: 467px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-gainsboro-200);
+  width: 794px;
+  height: 671px;
+}
+.reviewerDashboardChild2 {
+  top: 887px;
+  left: 497px;
+  background-color: var(--color-white);
+  width: 712px;
+  height: 84px;
+}
+.download5Icon {
+  position: absolute;
+  top: 914px;
+  left: 1126px;
+  width: 31px;
+  height: 22px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.application5 {
+  position: absolute;
+  top: 883px;
+  left: 590px;
+  display: inline-block;
+  width: 160px;
+  height: 76px;
+}
+.reviewerDashboardChild3 {
+  position: absolute;
+  top: 783px;
+  left: 497px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-white);
+  width: 712px;
+  height: 84px;
+}
+.download4Icon {
+  position: absolute;
+  top: 814px;
+  left: 1126px;
+  width: 31px;
+  height: 22px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.application4,
+.viewDoc,
+.viewDoc1,
+.viewDoc2 {
+  position: absolute;
+  top: 883px;
+  left: 961px;
+  display: inline-block;
+  width: 128px;
+  height: 84px;
+}
+.application4,
+.viewDoc1,
+.viewDoc2 {
+  top: 787px;
+}
+.application4,
+.viewDoc2 {
+  left: 590px;
+  width: 160px;
+  height: 76px;
+}
+.viewDoc2 {
+  top: 679px;
+  left: 636px;
+  width: 127px;
+  height: 75px;
+}
+.reviewerDashboardChild4 {
+  position: absolute;
+  top: 569px;
+  left: 497px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-white);
+  width: 712px;
+  height: 84px;
+}
+.application2,
+.viewDoc3 {
+  position: absolute;
+  top: 474px;
+  left: 961px;
+  display: inline-block;
+  width: 127px;
+  height: 75px;
+}
+.application2 {
+  top: 576px;
+  left: 590px;
+  width: 160px;
+  height: 76px;
+}
+.rectangleIcon {
+  position: absolute;
+  top: 594px;
+  left: 1117px;
+  border-radius: var(--br-xl);
+  width: 49px;
+  height: 33px;
+}
+.reviewerDashboardChild5 {
+  position: absolute;
+  top: 676px;
+  left: 497px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-white);
+  width: 712px;
+  height: 84px;
+}
+.application3 {
+  position: absolute;
+  top: 679px;
+  left: 590px;
+  display: inline-block;
+  width: 160px;
+  height: 76px;
+}
+.reviewerDashboardChild6 {
+  position: absolute;
+  top: 465px;
+  left: 497px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-white);
+  width: 712px;
+  height: 84px;
+}
+.application1,
+.viewDoc5,
+.viewDoc6,
+.viewDoc7 {
+  position: absolute;
+  top: 469px;
+  left: 590px;
+  display: inline-block;
+  width: 160px;
+  height: 76px;
+}
+.viewDoc5,
+.viewDoc6,
+.viewDoc7 {
+  top: 474px;
+  left: 957px;
+  width: 127px;
+  height: 75px;
+}
+.viewDoc6,
+.viewDoc7 {
+  top: 574px;
+  left: 961px;
+  width: 205px;
+  height: 79px;
+}
+.viewDoc7 {
+  top: 676px;
+  width: 128px;
+  height: 84px;
+}
+.reviewerDashboardChild7 {
+  position: absolute;
+  top: 361px;
+  left: 497px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-darkcyan-200);
+  width: 712px;
+  height: 84px;
+}
+.nameDocuments {
+  position: absolute;
+  top: 390px;
+  left: 639px;
+  display: inline-block;
+  width: 449px;
+  height: 52px;
+}
+.lineDiv {
+  position: absolute;
+  top: 360.5px;
+  left: 852.5px;
+  border-right: 1px solid var(--color-gray-200);
+  box-sizing: border-box;
+  width: 1px;
+  height: 676px;
+}
+.reviewerDashboardChild8,
+.reviewerDashboardChild9 {
+  position: absolute;
+  top: 492px;
+  left: 1117px;
+  border-radius: var(--br-xl);
+  width: 49px;
+  height: 33px;
+}
+.reviewerDashboardChild9 {
+  top: 702px;
+}
+.download1Icon,
+.download2Icon,
+.download3Icon {
+  position: absolute;
+  top: 498px;
+  left: 1126px;
+  width: 31px;
+  height: 22px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.download2Icon,
+.download3Icon {
+  top: 600px;
+}
+.download3Icon {
+  top: 708px;
+}
+.reviewerDashboard {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-6xl);
+  color: var(--color-black);
+  font-family: var(--font-josefin-sans);
+}
