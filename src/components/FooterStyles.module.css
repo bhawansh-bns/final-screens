@@ -3,4 +3,6 @@
   justify-content: center;
   align-items: center;
   background-color: var(--color-gainsboro-200);
+  margin-top: auto;
+  padding: 10px 10px;
 }
