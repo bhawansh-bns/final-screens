@@ -1,17 +1,12 @@
 import React from "react";
+import styles from './FooterStyles.module.css';
 
-
-function Footer() {
+function Footer({ children }) {
   return (
-    <div >
-      <div >
-        <div>Learn</div>
-        <div>Support</div>
-        <div>About Us</div>
-        <div>Contact Us</div>
-      </div>
+    <div className={styles.footer}>
+      {children}
     </div>
   );
-}
+};
 
 export default Footer;
