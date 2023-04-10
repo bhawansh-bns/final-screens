@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid lightgray;
+  }
+  
+  .company-icon {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .contact-icon {
+    background-color: #008cba;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  
