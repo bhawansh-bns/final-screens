@@ -67,7 +67,7 @@ function SignUp() {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-        <button type="submit">Submit</button>
+        <button type="submit">Sign Up</button>
       </form>
       <p>or</p>
       <button className={styles.googleButton}>
