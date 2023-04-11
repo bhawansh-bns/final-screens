@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from './SignUpPageStyles.module.css';
+import styles from '../SignUpPage/SignUpPageStyles.module.css';
 
 function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -63,11 +63,12 @@ function SignUp() {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-        <button type="submit">Submit</button>
 
+        <div className={styles.buttonContainer}>
+          <button type="submit">Submit</button>
+          <button type="button">Sign Up with Google</button>
+        </div>
       </form>
-      <p>or</p>
-      <button>Sign Up with Google</button>
     </div>
   );
 }
