@@ -3,7 +3,6 @@ import Footer from "../components/Footer";
 import Button from "../components/Button";
 import MainContainer from  './MainContainer'
 import styles from './LandingPageStyles.module.css';
-import Header from "../components/pageTemplate/Header";
 
 
 
