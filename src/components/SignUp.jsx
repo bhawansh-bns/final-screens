@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from '../SignUpPage/SignUpPageStyles.module.css';
+import styles from "../SignUpPage/SignUpPageStyles.module.css";
 
 function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -9,7 +9,9 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleSignUp = () => {
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    // TODO: implement sign up logic
   };
 
   return (
@@ -63,12 +65,13 @@ function SignUp() {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-
-        <div className={styles.buttonContainer}>
-          <button type="submit">Submit</button>
-          <button type="button">Sign Up with Google</button>
-        </div>
+        <button type="submit">Submit</button>
       </form>
+      <p>or</p>
+      <button>Sign Up with Google</button>
+      <div className={styles.signin}>
+        Already have an account? <button>Sign in</button>
+      </div>
     </div>
   );
 }
