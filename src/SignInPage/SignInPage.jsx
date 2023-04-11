@@ -1,20 +1,15 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
-import SignUp from "../components/SignUp";
-import styles from "./SignUpPageStyles.module.css";
-import { Link } from "react-router-dom";
+import SignIn from "../components/SignIn";
+import styles from "./SignInPageStyles.module.css";
 
-function SignUpPage() {
+function SignInPage() {
   return (
     <div className={styles.container}>
-      <div className={styles.signupContainer}>
-        <h2>Create an Account</h2>
-        <SignUp />
-        <div className={styles.signInLink}>
-          <p>Already have an account?</p>
-          <Link to="/signin">Sign In</Link>
-        </div>
+      <div className={styles.signinContainer}>
+        <h2>Sign In</h2>
+        <SignIn />
       </div>
       <Footer className={styles.footer}>
         <Button className={styles.footerbutton}>Learn</Button>
@@ -26,4 +21,4 @@ function SignUpPage() {
   );
 }
 
-export default SignUpPage;
+export default SignInPage;

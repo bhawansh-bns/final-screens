@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from "../SignUpPage/SignUpPageStyles.module.css";
+import googleLogo from '../assets/google-logo.png'; 
+import { Link } from "react-router-dom";
 
 function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -68,9 +70,11 @@ function SignUp() {
         <button type="submit">Submit</button>
       </form>
       <p>or</p>
-      <button>Sign Up with Google</button>
+      <button className={styles.googleButton}>
+      <img src={googleLogo} alt="Google Logo" />
+      </button>
       <div className={styles.signin}>
-        Already have an account? <button>Sign in</button>
+        Already have an account? <button><Link to="/signin">Sign in</Link></button>
       </div>
     </div>
   );

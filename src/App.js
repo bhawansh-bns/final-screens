@@ -1,14 +1,13 @@
 import React from "react";
-import { useEffect } from "react";
-import LandingPage from "./LandingPage/LandingPage";
+import SignInPage from "./SignInPage/SignInPage";
 import SignUpPage from "./SignUpPage/SignUpPage";
 
 function App() {
-
   return (
-    <>
-     <SignUpPage />
-    </>
+    <div>
+      <SignUpPage />
+    </div>
   );
 }
+
 export default App;

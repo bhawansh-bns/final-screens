@@ -5,4 +5,8 @@
   background-color: var(--color-gainsboro-200);
   margin-top: auto;
   padding: 10px 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
 }
