@@ -12,7 +12,6 @@ function SignUpPage() {
         <h2>Create an Account</h2>
         <SignUp />
         <div className={styles.signInLink}>
-          <p>Already have an account?</p>
           <Link to="/signin">Sign In</Link>
         </div>
       </div>
