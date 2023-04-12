@@ -8,12 +8,10 @@ function SignInPage() {
   return (
     <>
     <div className={styles.container}>
-      <div >
         <h2>Sign In</h2>
         <SignIn />
-      </div>
     </div>
-      
+      <Footer/>
       </>
     
   );

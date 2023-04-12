@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "../components/Button";
 import styles from "../SignInPage/SignInPageStyles.module.css";
+import { Link } from "react-router-dom";
 
 function SignIn() {
   const [email, setEmail] = useState("");
@@ -28,8 +29,10 @@ function SignIn() {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-
+      <Link to="/client-dashboard">
       <Button type="submit">Sign In</Button>
+      </Link>
+      
     </form>
   );
 }
