@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../components/Button";
 import styles from "../SignInPage/SignInPageStyles.module.css";
 
 function SignIn() {
@@ -28,7 +29,7 @@ function SignIn() {
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <button type="submit">Sign In</button>
+      <Button type="submit">Sign In</Button>
     </form>
   );
 }

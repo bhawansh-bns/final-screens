@@ -6,7 +6,7 @@ const MainContainer = () => {
     return (
       <div className={styles.maincontainer}>
 
-        <div>Grep E-Licensing</div>
+        <div className="m-2">Grep E-Licensing</div>
 
         <Button> <img src="photoCV.jpeg" /> </Button>
 
