@@ -9,6 +9,7 @@ const Header = () => {
         <img
           src=""
           className={styles.logo}
+          alt=""
         />
         Grep E-Licensing
       </Button>

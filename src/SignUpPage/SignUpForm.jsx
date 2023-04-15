@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../SignUpPage/SignUpPageStyles.module.css";
 import googleLogo from '../assets/google-logo.png'; 
 import { Link } from "react-router-dom";
+import Button from "../components/Button";
 
 function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -18,7 +19,6 @@ function SignUp() {
 
   return (
     <div className={styles.container} >
-      <h2>Create an Account</h2>
       <h2>Sign Up</h2>
       <form onSubmit={handleSignUp}>
         <label htmlFor="firstName">First Name:</label>
@@ -67,16 +67,16 @@ function SignUp() {
           id="confirmPassword"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-        <button type="submit">Sign Up</button>
+        /> <Link to="/sign-in">
+        <Button type="submit">Sign up</Button>
+       </Link>
+        
       </form>
-        or
+        
       <button className={styles.googleButton}>
       <img src={googleLogo} alt="Google Logo" />
       </button>
-      <div className={styles.signin}>
-        Already have an account? <button><Link to="/signin">Sign in</Link></button>
-      </div>
+      
     </div>
   );
 }
