@@ -12,7 +12,7 @@ function SignUpPage() {
         <h2>Create an Account</h2>
         <SignUp />
         <div className={styles.signInLink}>
-          <Link to="/signin">Sign In</Link>
+          <Link to="/sign-in">Sign In</Link>
         </div>
       </div>
       <Footer className={styles.footer}>
