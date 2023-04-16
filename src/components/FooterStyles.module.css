@@ -1,8 +1,25 @@
-.footer {
+/* .footer {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--color-gainsboro-200);
   margin-top: auto;
   padding: 1rem 2rem;
+} */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-gainsboro-200);
+  padding: 1rem 2rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.footerbutton {
+  margin: 10px ;
+  background-color: var(--color-gainsboro-200);
 }

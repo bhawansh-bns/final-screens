@@ -15,9 +15,3 @@
   height: 400px;
   margin: 0 auto;
 }
-
-
-.footerbutton {
-  margin: 10px ;
-  background-color: var(--color-gainsboro-200);
-}

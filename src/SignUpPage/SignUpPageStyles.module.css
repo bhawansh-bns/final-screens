@@ -1,31 +1,15 @@
 .container {
-  background-color: var(--color-gainsboro-200);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 500px;
-  height: 550px;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  bottom: 7%; 
-  left: 0; 
-  right: 0;
-  border-radius: 20px;
-}
-
-.signupContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  background-color: var(--color-gainsboro-200);
   align-items: center;
-  width: 100%;
-  height: 100%;
-  padding: 50px;
-  margin-top: -10px;
+  border-radius: 50px;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
 }
 
-form {
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,13 +18,13 @@ form {
   margin-bottom: -10px;
 }
 
-label {
+.label {
   margin-bottom: 10px;
   font-weight: bold;
   color: var(--color-silver);
 }
 
-input {
+.input {
   width: 100%;
   padding: 3px;
   margin-bottom: 5px;
@@ -48,25 +32,6 @@ input {
   border-radius: 5px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
   font-size: 16px;
-}
-
-button[type="submit"],
-button[type="button"] {
-  width: 30%;
-  padding: 3px;
-  border: none;
-  border-radius: 15px;
-  background-color: #4A9486;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  visibility: visible;
-  margin-top: 10px;
-}
-
-button[type="submit"]:hover,
-button[type="button"]:hover {
-  background-color: var(--color-blue-hover);
 }
 
 .googleButton {
@@ -83,8 +48,15 @@ button[type="button"]:hover {
   background-position: center;
   height: 40px;
   width: 200px;
-  margin-top: -30px;
-  margin-bottom: 10px;
+  margin-top: auto;
+}
+
+.last{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
 }
 
 

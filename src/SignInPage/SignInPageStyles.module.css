@@ -9,17 +9,7 @@
   height: 400px;
   margin: 0 auto;
   }
-  
-  .signinContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: 50px;
-    margin-top: -10px;
-  }
+
   
   form {
     display: flex;
