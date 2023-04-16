@@ -5,14 +5,14 @@ import TotalApplications from "./TotalApplications";
 import UploadFiles from "./UploadFiles";
 import styles from './ClientDashboardStyles.module.css'
 
-const ClientDashboard = () => {
- 
+function ClientDashboard() {
+
   const [applicationCount, setApplicationCount] = useState(0);
 
 
   return (
     <PageTemplate>
-  
+
       <div className={styles.dashboardContainer}>
         <h2>Applicant Dashboard</h2>
         <TotalApplications count={applicationCount} />
@@ -24,6 +24,6 @@ const ClientDashboard = () => {
 
     </PageTemplate>
   );
-};
+}
 
 export default ClientDashboard;

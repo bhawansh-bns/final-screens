@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
-import SignUp from "./SignUp";
+import SignUp from "../components/SignUp";
 import styles from "./SignUpPageStyles.module.css";
 import { Link } from "react-router-dom";
 
