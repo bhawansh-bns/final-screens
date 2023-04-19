@@ -34,23 +34,6 @@
   font-size: 16px;
 }
 
-.googleButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: -20px;
-  border: none;
-  background-color: #fff;
-  cursor: pointer;
-  background-image: url("../assets/google-logo.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  height: 40px;
-  width: 200px;
-  margin-top: auto;
-}
-
 .last{
   display: flex;
   flex-direction: column;

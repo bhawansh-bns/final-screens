@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PageTemplate from "../components/template/PageTemplate";
-import AllApplicationListing from "./AllApplicationListing";
-import TotalApplications from "./TotalApplications";
+// import AllApplicationListing from "./AllApplicationListing";
+// import TotalApplications from "./TotalApplications";
 import UploadFiles from "./UploadFiles";
 import styles from './ClientDashboardStyles.module.css'
 
@@ -15,7 +15,7 @@ function ClientDashboard() {
 
       <div className={styles.dashboardContainer}>
         <h2>Applicant Dashboard</h2>
-        <TotalApplications count={applicationCount} />
+        {/* <TotalApplications count={applicationCount} /> */}
 
         {/* <AllApplicationListing applications={applications} onDelete={handleFileDelete}/> */}
 

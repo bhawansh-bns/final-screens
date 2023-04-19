@@ -18,7 +18,6 @@ function SignUp() {
 
   return (
     <div className={styles.signupContainer}>
-      <h2>Sign Up</h2>
       <form className={styles.form} onSubmit={handleSignUp}>
         <label htmlFor="firstName">First Name:</label>
         <input
@@ -69,10 +68,6 @@ function SignUp() {
         />
         <button type="submit">Sign Up</button>
       </form>
-      <p>or</p>
-      <button className={styles.googleButton}>
-      <img src={googleLogo} alt="Google Logo" />
-      </button>
       <div className={styles.signin}>
         Already have an account? <button><Link to="/sign-in">Sign in</Link></button>
       </div>
