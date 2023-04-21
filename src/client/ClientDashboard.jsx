@@ -3,8 +3,8 @@ import PageTemplate from "../components/template/PageTemplate";
 import UploadFiles from "./UploadFiles";
 import styles from './ClientDashboardStyles.module.css'
 
-const ClientDashboard = () => {
- 
+function ClientDashboard() {
+
   const [applicationCount, setApplicationCount] = useState(0);
   const applications = [
     {
@@ -28,7 +28,7 @@ const ClientDashboard = () => {
 
   return (
     <PageTemplate>
-  
+
       <div className={styles.dashboardContainer}>
         <h2>Applicant Dashboard</h2>
        
@@ -39,6 +39,6 @@ const ClientDashboard = () => {
 
     </PageTemplate>
   );
-};
+}
 
 export default ClientDashboard;

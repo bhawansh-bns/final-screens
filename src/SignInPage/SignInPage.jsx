@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import SignIn from "./SignIn";
 import styles from "./SignInPageStyles.module.css";
+import { Link } from "react-router-dom";
 
 function SignInPage() {
   return (
@@ -9,9 +10,8 @@ function SignInPage() {
     <div className={styles.container}>
         <h2>Sign In</h2>
         <SignIn />
-    </div>
-      <Footer/>
-      </>
+      </div> 
+    </>
     
   );
 }
