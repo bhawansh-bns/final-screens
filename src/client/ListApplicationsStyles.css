@@ -1,0 +1,14 @@
+.table-container {
+    border-collapse: collapse;
+    margin: 20px;
+  }
+  
+  .table-container th, .table-container td {
+    padding: 10px;
+    border: 1px solid black;
+  }
+  
+  .table-container th {
+    background-color: var(--color-gainsboro-200);
+  }
+  
