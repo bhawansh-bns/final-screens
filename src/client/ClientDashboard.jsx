@@ -31,8 +31,7 @@ function ClientDashboard() {
 
       <div className={styles.dashboardContainer}>
         <h2>Applicant Dashboard</h2>
-       
-
+    
         <UploadFiles />
         
       </div>

@@ -17,12 +17,12 @@ const UploadFiles = () => {
   const onFileUpload = () => {
     const formData = new FormData();
     formData.append('file', selectedFile);
-    axios.post('http://localhost:8443/sendApplication/Applicant1/Admin1/TesthariMtwat', formData).then((res) => {
+    axios.post('http://localhost:8443/sendApplication/Applicant1/Admin1/CompanyName2', formData).then((res) => {
     console.log(res.data);
     setUploadedFile(res.data);
     });
   };
-  const checkingEndpoints = () => {
+  const loadApplications = () => {
     axios.get('http://localhost:8443/getApplications/Applicant1').then((res) => {
     console.log(res.data);
     setApplications(res.data);
@@ -35,13 +35,17 @@ const UploadFiles = () => {
         selectedFile={selectedFile}
         onFileChange={onFileChange}
         onFileUpload={onFileUpload}
+        // loadApplications={loadApplications} NEED TO HANDLE THE SYNCHRONOUS PART 
       />
+
       {/* <UploadedFile uploadedFile={uploadedFile} /> */}
-      <button onClick={checkingEndpoints}>
-        See All Applications
-      </button>
+
+      
       <h3>My Application List</h3>
       <ListApplications applications={applications} />
+      <button onClick={loadApplications}>
+        See All Applications
+      </button>
       
     </div>
   );
