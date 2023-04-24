@@ -4,20 +4,42 @@ import { Stack } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import styles from "./AdminDashboardStyles.module.css";
 
+const names = ["John Doe", "Jane Smith", "Bob Johnson", "Samantha Lee"];
+
 const AdminDashboard = () => {
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
-    // Dummy data for initial rendering
-    setRows([
-      {
-        id: 1,
-        application: "Application 1",
-        status: "Under Review",
-        reviewers: "Dr. AP Patil",
-      },
-    ]);
+    // Fetch data from API
+    fetch("https://jsonplaceholder.typicode.com/todos")
+      .then((response) => response.json())
+      .then((data) => {
+        // Format data to match expected structure
+        const formattedData = data.slice(0, 7).map((item, index) => ({
+          id: index + 1,
+          application: item.title,
+          status: getStatus(index),
+          reviewers: getRandomName(),
+        }));
+        setRows(formattedData);
+      })
+      .catch((error) => console.log(error));
   }, []);
+
+  const getStatus = (index) => {
+    if (index % 3 === 0) {
+      return "Under Review";
+    } else if (index % 3 === 1) {
+      return "Reviewed";
+    } else {
+      return "Pending";
+    }
+  };
+
+  const getRandomName = () => {
+    const randomIndex = Math.floor(Math.random() * names.length);
+    return names[randomIndex];
+  };
 
   // Function to add a new row
   const handleAddRow = () => {
@@ -26,7 +48,7 @@ const AdminDashboard = () => {
       id: rows.length + 1,
       application: "New Application",
       status: "Pending",
-      reviewers: "Reviewer 1",
+      reviewers: getRandomName(),
     };
     setRows([...rows, newRow]);
   };

@@ -19,7 +19,7 @@ function App() {
     //   <Route path="/admin-dashboard" element={<AdminDashboard />} />
     //   <Route path="/reviewer-dashboard" element={<ReviewerDashboard />} />
     // </Routes>
-    <ReviewerDashboard />
+    <ClientDashboard />
   );
 }
 export default App;
