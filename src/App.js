@@ -11,15 +11,15 @@ import AdminDashboard from "./admin/AdminDashboard";
 function App() {
 
   return (
-    <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/sign-in" element={<SignInPage />} />
-      <Route path="/sign-up" element={<SignUpPage />} />
-      <Route path="/client-dashboard" element={<ClientDashboard />} />
-      <Route path="/admin-dashboard" element={<AdminDashboard />} />
-      <Route path="/reviewer-dashboard" element={<ReviewerDashboard />} />
-    </Routes>
-    // <ReviewerDashboard />
+    // <Routes>
+    //   <Route path="/" element={<LandingPage />} />
+    //   <Route path="/sign-in" element={<SignInPage />} />
+    //   <Route path="/sign-up" element={<SignUpPage />} />
+    //   <Route path="/client-dashboard" element={<ClientDashboard />} />
+    //   <Route path="/admin-dashboard" element={<AdminDashboard />} />
+    //   <Route path="/reviewer-dashboard" element={<ReviewerDashboard />} />
+    // </Routes>
+    <ReviewerDashboard />
   );
 }
 export default App;
