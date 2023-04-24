@@ -10,6 +10,7 @@ function SignInPage() {
     <div className={styles.container}>
         <h2>Sign In</h2>
         <SignIn />
+        <Footer />
       </div> 
     </>
     

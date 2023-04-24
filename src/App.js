@@ -7,6 +7,7 @@ import SignInPage from "./SignInPage/SignInPage";
 import SignUpPage from "./SignUpPage/SignUpPage";
 import ReviewerDashboard from "./reviewer/ReviewerDashboard";
 import AdminDashboard from "./admin/AdminDashboard";
+import TestingPage from "./testing/TestingPage";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <Route path="/client-dashboard" element={<ClientDashboard />} />
       <Route path="/admin-dashboard" element={<AdminDashboard />} />
       <Route path="/reviewer-dashboard" element={<ReviewerDashboard />} />
+      <Route path="/testing" element={<TestingPage />} />
     </Routes>
     // <ReviewerDashboard />
   );

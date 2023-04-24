@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import PageTemplate from "../components/template/PageTemplate";
 import { Stack } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
+import Table from "../testing/Table";
 import styles from "./AdminDashboardStyles.module.css";
+import Search from "./Search";
 
 const AdminDashboard = () => {
   const [rows, setRows] = useState([]);
+  const [companyData, setcompanyData] = useState([]);
 
   useEffect(() => {
     // Dummy data for initial rendering
@@ -31,32 +34,36 @@ const AdminDashboard = () => {
     setRows([...rows, newRow]);
   };
 
+  const [applications, setApplications] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        "http://localhost:8443/getApplications/Admin1"
+      );
+      const json = await response.json();
+      setApplications(json);
+    };
+    fetchData();
+  }, []);
+
+  const getAssignments = async () => {
+    const response = await fetch(
+      "http://localhost:8446/getAssignments/Admin1/CompanyName"
+    );
+    const json = await response.json();
+    setcompanyData(json);
+    console.log(json);
+  };
+
   return (
     <PageTemplate>
-      <h2>Admin Dashboard</h2>
-      <div className={styles.container}>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th>Applications</th>
-              <th>Status</th>
-              <th>Reviewers</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row) => (
-              <tr key={row.id}>
-                <td>{row.application}</td>
-                <td>{row.status}</td>
-                <td>{row.reviewers}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <button className={styles.addButton} onClick={handleAddRow}>
-          <AddIcon className={styles.addIcon} />
-        </button>
-      </div>
+      <Stack direction="column">
+        <h2>Admin Dashboard</h2>
+          <Table data={applications} />
+          {/* <button onClick={getAssignments} >Get the assignments.</button> */}
+          <Search />
+      </Stack>
     </PageTemplate>
   );
 };

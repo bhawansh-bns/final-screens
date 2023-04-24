@@ -1,52 +1,62 @@
-import React, { useState } from 'react';
-import UploadForm from './UploadForm';
-import UploadedFile from './UploadedFile';
-import TotalApplications from "./TotalApplications";
-import ListApplications from "./ListApplications";
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import UploadForm from "./UploadForm";
+import UploadedFile from "./UploadedFile";
+import axios from "axios";
 
 const UploadFiles = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadedFile, setUploadedFile] = useState(null);
-  const [applications, setApplications] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);  
+  const [companyName, setInputValue] = useState("");
+
 
   const onFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
 
-  const onFileUpload = () => {
+  const onFileUpload = (companyName) => {
     const formData = new FormData();
-    formData.append('file', selectedFile);
-    axios.post('http://localhost:8443/sendApplication/Applicant1/Admin1/CompanyName2', formData).then((res) => {
-    console.log(res.data);
-    setUploadedFile(res.data);
-    });
+    formData.append("file", selectedFile);
+    axios
+      .post(
+        `http://localhost:8443/sendApplication/Applicant1/Admin1/${companyName}`,
+        formData
+      )
+      .then((res) => {
+        console.log(res.data);
+        setUploadedFile(res.data);
+      });
   };
-  const loadApplications = () => {
-    axios.get('http://localhost:8443/getApplications/Applicant1').then((res) => {
-    console.log(res.data);
-    setApplications(res.data);
-    }).catch(err => console.error(err));
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
   };
+
+
+  const handlePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
   return (
     <div>
-      <TotalApplications total={applications.length} />
-      <UploadForm
-        selectedFile={selectedFile}
-        onFileChange={onFileChange}
-        onFileUpload={onFileUpload}
-        // loadApplications={loadApplications} NEED TO HANDLE THE SYNCHRONOUS PART 
-      />
-
-      {/* <UploadedFile uploadedFile={uploadedFile} /> */}
-
-      
-      <h3>My Application List</h3>
-      <ListApplications applications={applications} />
-      <button onClick={loadApplications}>
-        See All Applications
-      </button>
-      
+      <button onClick={handlePopup}>Upload</button>
+      {
+        showPopup && (
+          <>
+            <input
+              type="text"
+              value={companyName}
+              onChange={handleInputChange}
+            />
+            <UploadForm
+              selectedFile={selectedFile}
+              onFileChange={onFileChange}
+              onFileUpload={onFileUpload(companyName)}
+            />
+          </>
+        )
+        /* <UploadedFile uploadedFile={uploadedFile} /> */
+      }
     </div>
   );
 };
