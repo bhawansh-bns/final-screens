@@ -1,10 +1,10 @@
 import React from 'react';
 
-const UploadForm = ({ selectedFile, onFileChange, onFileUpload }) => {
+const UploadForm = ({ selectedFile, onFileChange, onFileUpload, loadApplications }) => {
   return (
     <div>
-      <input type="file" onChange={onFileChange} />
-      <button onClick={onFileUpload} disabled={!selectedFile}>
+      <input onClick={onFileUpload}type="file" onChange={onFileChange} />
+      <button  disabled={!selectedFile}>
         Upload!
       </button>
       {!selectedFile && <p>Upload your Application.pdf</p>}
@@ -13,3 +13,6 @@ const UploadForm = ({ selectedFile, onFileChange, onFileUpload }) => {
 };
 
 export default UploadForm;
+
+
+// onClick={ () => {onFileUpload(); loadApplications();}}
