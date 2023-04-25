@@ -7,19 +7,20 @@ const UploadFiles = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadedFile, setUploadedFile] = useState(null);
   const [showPopup, setShowPopup] = useState(false);  
-  const [companyName, setInputValue] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [adminName, setAdmin] = useState("");
 
 
   const onFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
 
-  const onFileUpload = (companyName) => {
+  const onFileUpload = (adminName, companyName) => {
     const formData = new FormData();
     formData.append("file", selectedFile);
     axios
       .post(
-        `http://localhost:8443/sendApplication/Applicant1/Admin1/${companyName}`,
+        `http://localhost:8443/sendApplication/Applicant1/${adminName}/${companyName}`,
         formData
       )
       .then((res) => {
@@ -28,8 +29,12 @@ const UploadFiles = () => {
       });
   };
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+  const handleCompanyInputChange = (event) => {
+    setCompanyName(event.target.value);
+  };
+
+  const handleAdminInputChange = (event) => {
+    setAdmin(event.target.value);
   };
 
 
@@ -39,19 +44,28 @@ const UploadFiles = () => {
 
   return (
     <div>
-      <button onClick={handlePopup}>Upload</button>
+      <button onClick={handlePopup}>New Application!</button>
       {
         showPopup && (
           <>
             <input
               type="text"
               value={companyName}
-              onChange={handleInputChange}
+              onChange={handleCompanyInputChange}
+              placeholder="Enter your Company Name..."
+            />
+            <input
+              type="text"
+              value={adminName}
+              onChange={handleAdminInputChange}
+              placeholder="Choose your Admin..."
             />
             <UploadForm
               selectedFile={selectedFile}
               onFileChange={onFileChange}
-              onFileUpload={onFileUpload(companyName)}
+              onFileUpload={() => onFileUpload(adminName, companyName)}
+              adminName={adminName}
+              companyName={companyName}
             />
           </>
         )

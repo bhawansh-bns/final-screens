@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './FooterStyles.module.css';
-import Button from "./Button";
+import Button from "../button/Button";
 
 function Footer({ children }) {
   return (

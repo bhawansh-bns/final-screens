@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Button";
+import Button from "../button/Button";
 import { FaBars } from "react-icons/fa";
 import styles from "./SidebarStyles.module.css";
 

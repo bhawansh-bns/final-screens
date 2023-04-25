@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../components/Button";
+import Button from "../components/button/Button";
 import styles from "./LandingPageStyles.module.css";
 import { Link } from "react-router-dom";
 
