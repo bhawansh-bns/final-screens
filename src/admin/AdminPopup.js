@@ -1,29 +1,30 @@
 import React, { useState } from "react";
-import Table from '../components/table/Table';
+import Table from "../components/table/Table";
 import axios from "axios";
-import CollateFeedbackLicenseGrant from './CollateFeedbackLicenseGrant';
+import CollateFeedbackLicenseGrant from "./CollateFeedbackLicenseGrant";
+import Search from "../components/search/Search";
 
-
-const AdminPopup = ({ companyData, companyName }) => {
-  const [reviewerName, setReviewerName] = useState("");
-  const [licenseExpiryDate, setLicenseExpiryDate] = useState(new Date().toISOString().substr(0, 19));
+const AdminPopup = ({ companyData, companyName, reviewerName }) => {
+  // const [reviewerName, setReviewerName] = useState("");
+  const [licenseExpiryDate, setLicenseExpiryDate] = useState(
+    new Date().toISOString().substr(0, 19)
+  );
   const [assignmentDone, setAssignmentDone] = useState(false);
 
-  const handleReviewerInputChange = (event) => {
-    setReviewerName(event.target.value);
-  };
+  // const handleReviewerInputChange = (event) => {
+  //   setReviewerName(event.target.value);
+  // };
 
   const handleDateInputChange = (event) => {
     setLicenseExpiryDate(event.target.value);
   };
-
 
   const handleAssignApplication = (event) => {
     event.preventDefault();
     const formattedDate = licenseExpiryDate + "T00:00:00.000";
     axios
       .post(
-        `http://localhost:8446/assignApplication/Admin1/Applicant1/${companyName}/${reviewerName}/${formattedDate}`
+        `https://localhost:8446/assignApplication/Admin1/Applicant1/${companyName}/${reviewerName}/${formattedDate}`
       )
       .then((response) => {
         setAssignmentDone(true);
@@ -36,15 +37,17 @@ const AdminPopup = ({ companyData, companyName }) => {
   };
 
 
+
   return (
     <div>
-      <Table data={companyData} />
-      <input
+      
+      {/* <input
         type="text"
         value={reviewerName}
         onChange={handleReviewerInputChange}
         placeholder="Enter Reviewer Name to assign the application to..."
-      />
+      /> */}
+      
       <input
         type="date"
         value={licenseExpiryDate}
@@ -52,10 +55,9 @@ const AdminPopup = ({ companyData, companyName }) => {
         placeholder="Enter Reviewer Name to assign the application to..."
       />
       <button onClick={handleAssignApplication}> Add Reviewer! </button>
+      <Table data={companyData} />
       {assignmentDone && (
-
         <CollateFeedbackLicenseGrant companyName={companyName} />
-
       )}
     </div>
   );

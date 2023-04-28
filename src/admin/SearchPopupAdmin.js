@@ -1,26 +1,44 @@
 import React, { useState } from "react";
 import AdminPopup from "./AdminPopup";
 import Table from '../components/table/Table';
+import Search from "../components/search/Search";
+import axios from "axios";
 
-function Search() {
+
+function SearchPopupAdmin() {
   const [companyName, setcompanyName] = useState("");
   const [companyData, setCompanyData] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
+  let [list, setList] = useState([]);
+  const [reviewerName, setReviewer] = useState("");
+
+  const handleNameChange = (value) => {
+    setReviewer(value);
+  };
 
   const handleInputChange = (event) => {
     setcompanyName(event.target.value);
   };
 
-  const handleSearch = async () => {
-    const response = await fetch(`http://localhost:8446/getAssignments/Admin1/${companyName}`);
-    const data = await response.json();
-    setCompanyData(data);
-    setShowPopup(true);
-    console.log(data);
+  const handleSearch = () => {
+    axios.get(`https://localhost:8446/getAssignments/Admin1/${companyName}`).then((res) => {
+      setCompanyData(res.data);
+      console.log(res.data);
+    });
+    getReviewers();
   };
 
   const handlePopupClose = () => {
     setShowPopup(false);
+  };
+
+
+  const getReviewers = () => {
+    axios.get(`https://localhost:8446/getReviewers`).then((res) => {
+      setList(res.data);
+      console.log(list);  
+    });
+    setShowPopup(true);
   };
 
   return (
@@ -33,8 +51,9 @@ function Search() {
             <button className="close-btn" onClick={handlePopupClose}>
               X
             </button>
-
-            <AdminPopup companyData={companyData} companyName={companyName} />
+            <Search onNameChange={handleNameChange} list={list} />
+            <AdminPopup companyData={companyData} companyName={companyName} reviewerName={reviewerName}/>
+           
 
           </div>
         </div>
@@ -43,4 +62,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default SearchPopupAdmin;

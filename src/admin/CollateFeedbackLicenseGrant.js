@@ -14,7 +14,7 @@ function CollateFeedbackLicenseGrant({ companyName }) {
     event.preventDefault();
     axios
       .post(
-        `http://localhost:8446/collateFeedback/${companyName}/Admin1`,
+        `https://localhost:8446/collateFeedback/${companyName}/Admin1`,
         adminFeedback
       )
       .then((response) => {
@@ -30,7 +30,7 @@ function CollateFeedbackLicenseGrant({ companyName }) {
     event.preventDefault();
     axios
       .post(
-        `http://localhost:8446/licenceGrant/${companyName}/Admin1/2024-09-04T10:44:46.000`
+        `https://localhost:8446/licenceGrant/${companyName}/Admin1/2024-09-04T10:44:46.000`
       )
       .then((response) => {
         alert(JSON.stringify(response.data));

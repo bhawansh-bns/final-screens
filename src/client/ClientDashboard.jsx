@@ -14,7 +14,7 @@ function ClientDashboard() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8443/getApplications/Applicant1"
+          "https://localhost:8443/getApplications/Applicant1"
         );
         const json = response.data;
         setApplications(json);
@@ -28,7 +28,7 @@ function ClientDashboard() {
 
   const loadApplications = () => {
     axios
-      .get("http://localhost:8443/getApplications/Applicant1")
+      .get("https://localhost:8443/getApplications/Applicant1")
       .then((res) => {
         console.log(res.data);
         setApplications(res.data);

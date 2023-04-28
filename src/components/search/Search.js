@@ -1,12 +1,14 @@
-import './SearchStyles.css';
+import "./SearchStyles.css";
 import React, { useState } from "react";
 
 function Search(props) {
-  const {onAdminChange, list} = props;
+  const { onNameChange, list } = props;
 
-  const [list1, setList] = useState([]);
+  let list1 = [];
 
-  setList(list);
+  list.forEach((element) => {
+    list1.push(element);
+  });
 
   // const [adminName, setAdmin] = useState("");
   const [value, setValue] = useState("");
@@ -17,25 +19,21 @@ function Search(props) {
   const onSearch = (searchTerm) => {
     // setAdmin(searchTerm);
     setValue(searchTerm);
-    onAdminChange(searchTerm);
+    onNameChange(searchTerm);
   };
 
   return (
     <div className="App">
       <div className="search-container">
         <div className="search-inner">
-          <input
-            type="text"
-            value={value}
-            onChange={onChange}
-          />
-          <button onClick={() => onSearch(value)}>Search</button>
+          <input type="text" value={value} onChange={onChange} placeholder="Enter Name..."/>
+          {/* <button onClick={() => onSearch(value)}>Search</button> */}
         </div>
         <div className="dropdown" style={{ width: "205px" }}>
           {list1
             .filter((item) => {
-              const searchTerm = value.toLowerCase();
-              const item1 = item["Username"].toLowerCase();
+              const searchTerm = value;
+              const item1 = item["Username"];
               return (
                 searchTerm &&
                 item1.startsWith(searchTerm) &&

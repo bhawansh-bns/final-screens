@@ -4,7 +4,7 @@ import { Stack } from "@mui/material";
 import axios from "axios";
 import Table from '../components/table/Table';
 import styles from "./AdminDashboardStyles.module.css";
-import SearchPopup from "./SearchPopup";
+import SearchPopupAdmin from "./SearchPopupAdmin";
 
 const AdminDashboard = () => {
   const [rows, setRows] = useState([]);
@@ -30,7 +30,7 @@ const AdminDashboard = () => {
         <h2>Admin Dashboard</h2>
           <Table data={applications} />
           {/* <button onClick={getAssignments} >Get the assignments.</button> */}
-          <SearchPopup />
+          <SearchPopupAdmin />
       </Stack>
     </PageTemplate>
   );
