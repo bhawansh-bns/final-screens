@@ -1,33 +1,53 @@
 import React, { useState, useEffect } from "react";
 import PageTemplate from "../components/template/PageTemplate";
-import Table from '../components/table/Table';
+import Table from "../components/table/Table";
 import SearchPopup from "./SearchPopup";
 import { Stack } from "@mui/material";
 import "./ReviewerDashboardStyles.css";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const ReviewerDashboard = () => {
   const [applications, setApplications] = useState([]);
- 
+  const history = useHistory();
+
+  let accountName;
+  const fetchData = () => {
+    axios.get("http://localhost:3001/login").then((response) => {
+      if (
+        response.data.loggedIn === true &&
+        response.data.user[0].role == "Reviewer"
+      ) {
+        accountName = response.data.user[0].username;
+        loadApplications();
+      } else {
+        history.push("/sign-in");
+      }
+    });
+  };
+  const loadApplications = () => {
+    axios
+      .get(`https://localhost:8443/getAssignmentsForReviewer/${accountName}`)
+      .then((res) => {
+        console.log(res.data);
+        setApplications(res.data);
+      })
+      .catch((err) => console.error(err));
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(
-        `http://localhost:8449/getAssignmentsForReviewer/Reviewer1`
-      );
-      const json = await response.json();
-      setApplications(json);
-    };
     fetchData();
-  }, []);
+  }, [accountName]);
 
   return (
     <PageTemplate>
-      <div className="reviewerDashboard" >
+      <div className="reviewerDashboard">
         <h2>Reviewer Dashboard</h2>
         <Table data={applications} />
-        <SearchPopup/>
+        <SearchPopup accountName={accountName} />
       </div>
     </PageTemplate>
-  );  
+  );
 };
 
 export default ReviewerDashboard;

@@ -1,54 +1,88 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../SignUpPage/SignUpPageStyles.module.css";
-import googleLogo from '../assets/google-logo.png'; 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
 
 function SignUp() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [role, setRole] = useState("");
 
-  const handleSignUp = (e) => {
-    e.preventDefault();
-    // TODO: implement sign up logic
+  const history = useHistory();
+  axios.defaults.withCredentials = true;
+
+  const cordaAccount = (port, accountName) => {
+    axios
+      .post(`https://localhost:${port}/createAccount/${accountName}`, {})
+      .then((response) => {
+        console.log(response);
+      });
   };
+  const shareAccount = (port, accountName, node) => {
+    axios
+      .post(
+        `http://localhost:${port}/shareAccountTo/${accountName}/${node}`,
+        {}
+      )
+      .then((response) => {
+        console.log(response);
+      });
+  };
+
+  const signUp = () => {
+    axios
+      .post("http://localhost:3001/register", {
+        username: userName,
+        password: password,
+        email: email,
+        role: role,
+      })
+      .then((response) => {
+        console.log(response);
+      });
+
+    history.push("/sign-in");
+  };
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/login").then((response) => {
+      if (response.data.loggedIn === true) {
+        console.log("logged in");
+        if (response.data.user[0].role == "Applicant") {
+          cordaAccount(port, response.data.user[0].username);
+          shareAccount(port, response.data.user[0].username, "Admin");
+          history.push("/client-dashboard");
+        } else if (response.user.data[0].role == "Admin") {
+          cordaAccount(port, response.data.user[0].username);
+          shareAccount(port, response.data.user[0].username, "Applicant");
+          shareAccount(port, response.data.user[0].username, "Reviewer");
+          history.push("/admin-dashboard");
+        } else if (response.user.data[0].role == "Reviewer") {
+          cordaAccount(port, response.data.user[0].username);
+          shareAccount(port, response.data.user[0].username, "Admin");
+          history.push("/reviewer-dashboard");
+        }
+      }
+    });
+  }, []);
 
   return (
     <div className={styles.signupContainer}>
-      <form className={styles.form} onSubmit={handleSignUp}>
-        <label htmlFor="firstName">First Name:</label>
+      <form className={styles.form} onSubmit={signUp}>
+        <label htmlFor="firstName">UserName:</label>
         <input
           type="text"
-          id="firstName"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
+          id="userName"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
         />
-
-        <label htmlFor="lastName">Last Name:</label>
-        <input
-          type="text"
-          id="lastName"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
-
         <label htmlFor="email">Email:</label>
         <input
           type="email"
           id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-        />
-
-        <label htmlFor="phoneNumber">Phone Number:</label>
-        <input
-          type="tel"
-          id="phoneNumber"
-          value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
         />
 
         <label htmlFor="password">Password:</label>
@@ -59,17 +93,21 @@ function SignUp() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <label htmlFor="confirmPassword">Confirm Password:</label>
+        <label htmlFor="role">Role:</label>
         <input
-          type="password"
-          id="confirmPassword"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
+          type="text"
+          id="role"
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
         />
         <button type="submit">Sign Up</button>
       </form>
+      <br></br>
       <div className={styles.signin}>
-        Already have an account? <button><Link to="/sign-in">Sign in</Link></button>
+        Already have an account?{" "}
+        <button>
+          <Link to="/sign-in">Sign in</Link>
+        </button>
       </div>
     </div>
   );

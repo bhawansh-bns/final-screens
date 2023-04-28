@@ -3,38 +3,41 @@ import PageTemplate from "../components/template/PageTemplate";
 import UploadFiles from "./UploadFiles";
 import ListApplications from "./ListApplications";
 import TotalApplications from "./TotalApplications";
-import Table from '../components/table/Table';
+import Table from "../components/table/Table";
 import axios from "axios";
 import styles from "./ClientDashboardStyles.module.css";
+import { useHistory } from "react-router-dom";
 
-function ClientDashboard() {
+const ClientDashboard = () => {
   const [applications, setApplications] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://localhost:8443/getApplications/Applicant1"
-        );
-        const json = response.data;
-        setApplications(json);
-        // setData(json);
-      } catch (error) {
-        console.log(error);
+  const history = useHistory();
+  let accountName;
+  const fetchData = () => {
+    axios.get("http://localhost:3001/login").then((response) => {
+      if (
+        response.data.loggedIn === true &&
+        response.data.user[0].role == "Applicant"
+      ) {
+        accountName = response.data.user[0].username;
+        loadApplications();
+      } else {
+        history.push("/sign-in");
       }
-    };
-    fetchData();
-  }, []);
-
+    });
+  };
   const loadApplications = () => {
     axios
-      .get("https://localhost:8443/getApplications/Applicant1")
+      .get(`https://localhost:8443/getApplications/${accountName}`)
       .then((res) => {
         console.log(res.data);
         setApplications(res.data);
       })
       .catch((err) => console.error(err));
   };
+
+  useEffect(() => {
+    fetchData();
+  }, [accountName]);
 
   return (
     <PageTemplate>
@@ -45,15 +48,12 @@ function ClientDashboard() {
         <UploadFiles />
         <h3>My Application List</h3>
         {/* <ListApplications applications={applications} /> */}
-        <Table
-          data={applications}
-          excludeColumns={["Reviewer", "Stage"]}
-        />
+        <Table data={applications} excludeColumns={["Reviewer", "Stage"]} />
 
         <button onClick={loadApplications}>See All Applications</button>
       </div>
     </PageTemplate>
   );
-}
+};
 
 export default ClientDashboard;

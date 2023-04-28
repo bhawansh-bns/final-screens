@@ -38,23 +38,25 @@ const db = mysql.createConnection({
   user: "root",
   host: "localhost",
   password: "",
-  database: "nodelogin",
+  database: "login",
 });
 
 app.post("/register", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
   const email = req.body.email;
-
+  const role = req.body.role;
+  console.log("hi");
   bcrypt.hash(password, saltRounds, (err, hash) => {
     if (err) {
       console.log(err);
     }
 
     db.query(
-      "INSERT INTO applicant_accounts (username, password, email) VALUES (?,?,?)",
-      [username, hash, email],
+      "INSERT INTO accounts (username, password, email, role) VALUES (?,?,?,?)",
+      [username, hash, email, role],
       (err, result) => {
+        console.log("hi2");
         console.log(err);
       }
     );
@@ -64,9 +66,21 @@ app.post("/register", (req, res) => {
 
 app.get("/login", (req, res) => {
   if (req.session.user) {
-    res.send({ loggedIn: true, user: req.session.user });
+    res.send({
+      loggedIn: true,
+      user: req.session.user,
+    });
   } else {
     res.send({ loggedIn: false });
+  }
+});
+
+app.post("/logout", (req, res) => {
+  if (req.session.user) {
+    req.session.destroy();
+    res.send({ message: "Logged" });
+  } else {
+    res.send({ message: "Log in first" });
   }
 });
 
@@ -75,7 +89,7 @@ app.post("/login", (req, res) => {
   const password = req.body.password;
 
   db.query(
-    "SELECT * FROM applicant_accounts WHERE username = ?;",
+    "SELECT * FROM accounts WHERE username = ?;",
     username,
     (err, result) => {
       if (err) {

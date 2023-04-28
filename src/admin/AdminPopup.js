@@ -36,18 +36,15 @@ const AdminPopup = ({ companyData, companyName, reviewerName }) => {
       });
   };
 
-
-
   return (
     <div>
-      
       {/* <input
         type="text"
         value={reviewerName}
         onChange={handleReviewerInputChange}
         placeholder="Enter Reviewer Name to assign the application to..."
       /> */}
-      
+
       <input
         type="date"
         value={licenseExpiryDate}

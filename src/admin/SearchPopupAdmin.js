@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import AdminPopup from "./AdminPopup";
-import Table from '../components/table/Table';
+import Table from "../components/table/Table";
 import Search from "../components/search/Search";
 import axios from "axios";
 
-
-function SearchPopupAdmin() {
+function SearchPopupAdmin(props) {
   const [companyName, setcompanyName] = useState("");
   const [companyData, setCompanyData] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   let [list, setList] = useState([]);
   const [reviewerName, setReviewer] = useState("");
+  const [account, setAccount] = useState("");
+
+  setAccount(props.accountName);
 
   const handleNameChange = (value) => {
     setReviewer(value);
@@ -21,10 +23,12 @@ function SearchPopupAdmin() {
   };
 
   const handleSearch = () => {
-    axios.get(`https://localhost:8446/getAssignments/Admin1/${companyName}`).then((res) => {
-      setCompanyData(res.data);
-      console.log(res.data);
-    });
+    axios
+      .get(`https://localhost:8446/getAssignments/Admin1/${companyName}`)
+      .then((res) => {
+        setCompanyData(res.data);
+        console.log(res.data);
+      });
     getReviewers();
   };
 
@@ -32,18 +36,22 @@ function SearchPopupAdmin() {
     setShowPopup(false);
   };
 
-
   const getReviewers = () => {
     axios.get(`https://localhost:8446/getReviewers`).then((res) => {
       setList(res.data);
-      console.log(list);  
+      console.log(list);
     });
     setShowPopup(true);
   };
 
   return (
     <div>
-      <input type="text" value={companyName} onChange={handleInputChange} placeholder="Enter Company Name..." />
+      <input
+        type="text"
+        value={companyName}
+        onChange={handleInputChange}
+        placeholder="Enter Company Name..."
+      />
       <button onClick={handleSearch}>Search</button>
       {showPopup && (
         <div className="popup">
@@ -52,9 +60,11 @@ function SearchPopupAdmin() {
               X
             </button>
             <Search onNameChange={handleNameChange} list={list} />
-            <AdminPopup companyData={companyData} companyName={companyName} reviewerName={reviewerName}/>
-           
-
+            <AdminPopup
+              companyData={companyData}
+              companyName={companyName}
+              reviewerName={reviewerName}
+            />
           </div>
         </div>
       )}

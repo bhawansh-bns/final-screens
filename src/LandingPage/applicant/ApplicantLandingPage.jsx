@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Axios from "axios";
+import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 export default function Login() {
@@ -8,27 +8,29 @@ export default function Login() {
 
   const [loginStatus, setLoginStatus] = useState("");
   const history = useHistory();
-  Axios.defaults.withCredentials = true;
+  axios.defaults.withCredentials = true;
 
   const login = () => {
-    Axios.post("http://localhost:3001/login", {
-      username: username,
-      password: password,
-    }).then((response) => {
-      if (response.data.message) {
-        setLoginStatus(response.data.message);
-      } else {
-        setLoginStatus(response.data[0].username);
-        history.push("/client-dashboard");
-      }
-    });
+    axios
+      .post("http://localhost:3001/login", {
+        username: username,
+        password: password,
+      })
+      .then((response) => {
+        if (response.data.message) {
+          setLoginStatus(response.data.message);
+        } else {
+          setLoginStatus(response.data[0].username);
+          history.push("/client-dashboard");
+        }
+      });
   };
   const newAccount = () => {
-    history.push("/registration");
+    history.push("/sign-up");
   };
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/login").then((response) => {
+    axios.get("http://localhost:3001/login").then((response) => {
       if (response.data.loggedIn === true) {
         setLoginStatus(response.data.user[0].username);
       }
