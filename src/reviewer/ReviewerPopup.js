@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import Table from "../components/table/Table";
 import axios from "axios";
 
-const ReviewerPopup = ({ companyData, companyName }) => {
+const ReviewerPopup = ({ companyData, companyName, accountName }) => {
   const [reviewerFeedback, setReviewerFeedback] = useState("");
-  const [account, setAccount] = useState("");
-  setAccount(props.accountName);
   const handleDownload = async () => {
-    const url = `http://localhost:8449/acceptAssignment/Admin1/${companyName}/${accountName}`;
+    const url = `https://localhost:8449/acceptAssignment/${companyName}/${accountName}`;
     try {
       const response = await axios.get(url, { responseType: "blob" });
       const urlObject = window.URL || window.webkitURL || window;
@@ -34,7 +32,7 @@ const ReviewerPopup = ({ companyData, companyName }) => {
     event.preventDefault();
     axios
       .post(
-        `http://localhost:8449/giveFeedback/Admin1/${companyName}/true/${accountName}`,
+        `https://localhost:8449/giveFeedback/${companyName}/true/${accountName}`,
         reviewerFeedback
       )
       .then((response) => {
@@ -50,7 +48,7 @@ const ReviewerPopup = ({ companyData, companyName }) => {
     event.preventDefault();
     axios
       .post(
-        `http://localhost:8449/giveFeedback/Admin1/${companyName}/false/${accountName}`,
+        `https://localhost:8449/giveFeedback/${companyName}/false/${accountName}`,
         reviewerFeedback
       )
       .then((response) => {

@@ -50,17 +50,17 @@ function SignUp() {
       if (response.data.loggedIn === true) {
         console.log("logged in");
         if (response.data.user[0].role == "Applicant") {
-          cordaAccount(port, response.data.user[0].username);
-          shareAccount(port, response.data.user[0].username, "Admin");
+          // cordaAccount(port, response.data.user[0].username);
+          // shareAccount(port, response.data.user[0].username, "Admin");
           history.push("/client-dashboard");
         } else if (response.user.data[0].role == "Admin") {
-          cordaAccount(port, response.data.user[0].username);
-          shareAccount(port, response.data.user[0].username, "Applicant");
-          shareAccount(port, response.data.user[0].username, "Reviewer");
+          // cordaAccount(port, response.data.user[0].username);
+          // shareAccount(port, response.data.user[0].username, "Applicant");
+          // shareAccount(port, response.data.user[0].username, "Reviewer");
           history.push("/admin-dashboard");
         } else if (response.user.data[0].role == "Reviewer") {
-          cordaAccount(port, response.data.user[0].username);
-          shareAccount(port, response.data.user[0].username, "Admin");
+          // cordaAccount(port, response.data.user[0].username);
+          // shareAccount(port, response.data.user[0].username, "Admin");
           history.push("/reviewer-dashboard");
         }
       }

@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Table from "../components/table/Table";
 import ReviewerPopup from "./ReviewerPopup";
 
-function Search() {
+function SearchPopup(props) {
   const [companyName, setcompanyName] = useState("");
   const [companyData, setCompanyData] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
+  const { accountName } = props;
 
   const handleInputChange = (event) => {
     setcompanyName(event.target.value);
@@ -13,7 +14,7 @@ function Search() {
 
   const handleSearch = async () => {
     const response = await fetch(
-      `http://localhost:8449/getAssignments/${accountName}/${companyName}`
+      `https://localhost:8449/getAssignments/${accountName}/${companyName}`
     );
     const data = await response.json();
     setCompanyData(data);
@@ -44,6 +45,7 @@ function Search() {
             <ReviewerPopup
               companyName={companyName}
               companyData={companyData}
+              accountName={accountName}
             />
           </div>
         </div>
@@ -52,4 +54,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default SearchPopup;

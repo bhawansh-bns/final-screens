@@ -10,6 +10,7 @@ import { useHistory } from "react-router-dom";
 const ReviewerDashboard = () => {
   const [applications, setApplications] = useState([]);
   const history = useHistory();
+  const [account, setAccount] = useState("");
 
   let accountName;
   const fetchData = () => {
@@ -19,6 +20,7 @@ const ReviewerDashboard = () => {
         response.data.user[0].role == "Reviewer"
       ) {
         accountName = response.data.user[0].username;
+        setAccount(accountName);
         loadApplications();
       } else {
         history.push("/sign-in");
@@ -27,7 +29,7 @@ const ReviewerDashboard = () => {
   };
   const loadApplications = () => {
     axios
-      .get(`https://localhost:8443/getAssignmentsForReviewer/${accountName}`)
+      .get(`https://localhost:8449/getAssignmentsForReviewer/${accountName}`)
       .then((res) => {
         console.log(res.data);
         setApplications(res.data);
@@ -44,7 +46,7 @@ const ReviewerDashboard = () => {
       <div className="reviewerDashboard">
         <h2>Reviewer Dashboard</h2>
         <Table data={applications} />
-        <SearchPopup accountName={accountName} />
+        <SearchPopup accountName={account} />
       </div>
     </PageTemplate>
   );
