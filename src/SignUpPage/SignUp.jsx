@@ -17,14 +17,17 @@ function SignUp() {
       .post(`https://localhost:${port}/createAccount/${accountName}`, {})
       .then((response) => {
         console.log(response);
+        if (port == 8446) {
+          shareAccount(port, accountName, "Applicant");
+          shareAccount(port, accountName, "Reviewer");
+        } else if (port == 8449 || port == 8443) {
+          shareAccount(port, accountName, "Admin");
+        }
       });
   };
   const shareAccount = (port, accountName, node) => {
     axios
-      .post(
-        `http://localhost:${port}/shareAccountTo/${accountName}/${node}`,
-        {}
-      )
+      .post(`https://localhost:${port}/shareAccount/${accountName}/${node}`, {})
       .then((response) => {
         console.log(response);
       });
@@ -40,6 +43,14 @@ function SignUp() {
       })
       .then((response) => {
         console.log(response);
+        if (role == "Applicant") {
+          cordaAccount(8443, userName);
+        } else if (role == "Admin") {
+          cordaAccount(8446, userName);
+        } else if (role == "Reviewer") {
+          cordaAccount(8449, userName);
+        }
+        history.push("/sign-in");
       });
 
     history.push("/sign-in");
