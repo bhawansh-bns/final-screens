@@ -24,10 +24,9 @@ const AdminPopup = ({ companyData, companyName, reviewerName }) => {
     const formattedDate = licenseExpiryDate + "T00:00:00.000";
     axios
       .post(
-        `https://localhost:8446/assignApplication/Admin1/Applicant1/${companyName}/${reviewerName}/${formattedDate}`
+        `https://localhost:8446/assignApplication/Admin1/${companyName}/${reviewerName}/${formattedDate}`
       )
       .then((response) => {
-        setAssignmentDone(true);
         alert(JSON.stringify(response.data));
         console.log(response.data);
       })
@@ -53,9 +52,8 @@ const AdminPopup = ({ companyData, companyName, reviewerName }) => {
       />
       <button onClick={handleAssignApplication}> Add Reviewer! </button>
       <Table data={companyData} />
-      {assignmentDone && (
-        <CollateFeedbackLicenseGrant companyName={companyName} />
-      )}
+
+      <CollateFeedbackLicenseGrant companyName={companyName} />
     </div>
   );
 };
