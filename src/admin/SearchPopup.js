@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import AdminPopup from "./AdminPopup";
-import Table from '../components/table/Table';
+import Table from "../components/table/Table";
 
-function Search() {
+function Search({ account }) {
   const [companyName, setcompanyName] = useState("");
   const [companyData, setCompanyData] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
@@ -12,7 +12,9 @@ function Search() {
   };
 
   const handleSearch = async () => {
-    const response = await fetch(`https://localhost:8446/getAssignments/Admin1/${companyName}`);
+    const response = await fetch(
+      `https://localhost:8446/getAssignments/${account}/${companyName}`
+    );
     const data = await response.json();
     setCompanyData(data);
     setShowPopup(true);
@@ -25,7 +27,12 @@ function Search() {
 
   return (
     <div>
-      <input type="text" value={companyName} onChange={handleInputChange} placeholder="Enter Company Name..." />
+      <input
+        type="text"
+        value={companyName}
+        onChange={handleInputChange}
+        placeholder="Enter Company Name..."
+      />
       <button onClick={handleSearch}>Search</button>
       {showPopup && (
         <div className="popup">
@@ -34,8 +41,11 @@ function Search() {
               X
             </button>
 
-            <AdminPopup companyData={companyData} companyName={companyName} />
-
+            <AdminPopup
+              companyData={companyData}
+              companyName={companyName}
+              account={account}
+            />
           </div>
         </div>
       )}

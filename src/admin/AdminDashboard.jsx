@@ -42,7 +42,7 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     fetchData();
-  }, [account]);
+  }, [account1]);
 
   return (
     <PageTemplate>

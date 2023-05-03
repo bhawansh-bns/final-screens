@@ -11,11 +11,11 @@ export default function Feedback() {
   const [feedback, setFeedback] = useState([]);
   const [licenses, setLicenses] = useState([]);
   const [account, setAccount] = useState("");
-  const [port, setPort] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const history = useHistory();
   let account1;
   let port1;
+  const [port, setPort] = useState("");
 
   const getLicenses = () => {
     try {
@@ -31,15 +31,16 @@ export default function Feedback() {
   };
   const fetchData = () => {
     axios.get("http://localhost:3001/login").then((response) => {
+      console.log(response);
       if (
         response.data.loggedIn === true &&
         response.data.user[0].role == "Admin"
       ) {
         // accountName = response.data.user[0].username;
         port1 = 8446;
+        setPort(8446);
         account1 = response.data.user[0].username;
         setAccount(account1);
-        setPort(port1);
         console.log(account);
         getLicenses();
       } else if (
@@ -48,6 +49,7 @@ export default function Feedback() {
       ) {
         // accountName = response.data.user[0].username;
         port1 = 8443;
+        setPort(8443);
         account1 = response.data.user[0].username;
         setAccount(account1);
         console.log(account);
@@ -75,8 +77,9 @@ export default function Feedback() {
   };
 
   const handleGetFeedback = () => {
+    console.log(port);
     axios
-      .get(`https://localhost:8446/getFeedback/${account}/${companyName}`)
+      .get(`https://localhost:${port}/getFeedback/${account}/${companyName}`)
       .then((res) => {
         console.log(res.data);
         setFeedback(res.data);

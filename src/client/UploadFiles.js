@@ -4,12 +4,13 @@ import UploadedFile from "./UploadedFile";
 import Search from "../components/search/Search";
 import axios from "axios";
 
-const UploadFiles = () => {
+const UploadFiles = (props) => {
   const [selectedFile, setSelectedFile] = useState(null);
   let [list, setList] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   const [companyName, setCompanyName] = useState("");
   const [adminName, setAdmin] = useState("");
+  const { account } = props;
 
   const handleNameChange = (value) => {
     setAdmin(value);
@@ -24,7 +25,7 @@ const UploadFiles = () => {
     formData.append("file", selectedFile);
     axios
       .post(
-        `https://localhost:8443/sendApplication/Applicant1/${adminName}/${companyName}`,
+        `https://localhost:8443/sendApplication/${account}/${adminName}/${companyName}`,
         formData
       )
       .then((res) => {

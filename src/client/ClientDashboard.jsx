@@ -12,6 +12,7 @@ const ClientDashboard = () => {
   const [applications, setApplications] = useState([]);
   const history = useHistory();
   let accountName;
+  const [account, setAccount] = useState("");
   const fetchData = () => {
     axios.get("http://localhost:3001/login").then((response) => {
       if (
@@ -19,6 +20,7 @@ const ClientDashboard = () => {
         response.data.user[0].role == "Applicant"
       ) {
         accountName = response.data.user[0].username;
+        setAccount(accountName);
         loadApplications();
       } else {
         history.push("/sign-in");
@@ -45,10 +47,10 @@ const ClientDashboard = () => {
         <h2>Applicant Dashboard</h2>
         <TotalApplications total={applications.length} />
         <h3>Upload Application</h3>
-        <UploadFiles />
+        <UploadFiles account={account} />
         <h3>My Application List</h3>
         {/* <ListApplications applications={applications} /> */}
-        <Table data={applications} excludeColumns={["Reviewer", "Stage"]} />
+        <Table data={applications} excludeColumns={[]} />
 
         <button onClick={loadApplications}>See All Applications</button>
       </div>

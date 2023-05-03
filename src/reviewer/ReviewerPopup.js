@@ -63,7 +63,7 @@ const ReviewerPopup = ({ companyData, companyName, accountName }) => {
   return (
     <div>
       <Table data={companyData} />
-      <button onClick={handleDownload}> Download the application! </button>
+      <button onClick={handleDownload}> View the application! </button>
       <input
         type="text"
         value={reviewerFeedback}

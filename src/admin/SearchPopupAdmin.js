@@ -66,6 +66,7 @@ function SearchPopupAdmin(props) {
               companyData={companyData}
               companyName={companyName}
               reviewerName={reviewerName}
+              account={accountName}
             />
           </div>
         </div>
