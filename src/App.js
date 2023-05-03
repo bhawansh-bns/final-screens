@@ -8,6 +8,7 @@ import ReviewerDashboard from "./reviewer/ReviewerDashboard";
 import AdminDashboard from "./admin/AdminDashboard";
 import TestingPage from "./testing/TestingPage";
 import { Switch } from "react-router";
+import Feedback from "./components/feedback/Feedback";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         exact
         render={(props) => <ReviewerDashboard />}
       />
+      <Route path="/feedback" exact render={(props) => <Feedback />} />
       <Route path="/testing" exact render={(props) => <TestingPage />} />
     </Router>
     // <ReviewerDashboard />
