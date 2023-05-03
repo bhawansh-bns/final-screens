@@ -26,7 +26,12 @@ const Header = () => {
           Grep E-Licensing
         </Button>
       </Link>
-
+      <Link to={"/feedback"}>
+        <Button className={styles.logoBtn}>
+          <img src="" className={styles.logo} alt="" />
+          Licences and Feedback
+        </Button>
+      </Link>
       <div className={styles.contact}>
         <Button className={styles.contactBtn}>UserInfo</Button>
         <Button className={styles.logoBtn} onClick={logout}>
