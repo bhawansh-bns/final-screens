@@ -11,30 +11,30 @@ export default function Login() {
   axios.defaults.withCredentials = true;
 
   const login = () => {
-    axios
-      .post("http://localhost:3001/login", {
-        username: username,
-        password: password,
-      })
-      .then((response) => {
-        if (response.data.message) {
-          setLoginStatus(response.data.message);
-        } else {
-          setLoginStatus(response.data[0].username);
-          history.push("/client-dashboard");
-        }
-      });
+    // axios
+    //   .post("http://localhost:3001/login", {
+    //     username: username,
+    //     password: password,
+    //   })
+    //   .then((response) => {
+    //     if (response.data.message) {
+    //       setLoginStatus(response.data.message);
+    //     } else {
+    //       setLoginStatus(response.data[0].username);
+    //       history.push("/client-dashboard");
+    //     }
+    //   });
   };
   const newAccount = () => {
     history.push("/sign-up");
   };
 
   useEffect(() => {
-    axios.get("http://localhost:3001/login").then((response) => {
-      if (response.data.loggedIn === true) {
-        setLoginStatus(response.data.user[0].username);
-      }
-    });
+    // axios.get("http://localhost:3001/login").then((response) => {
+    //   if (response.data.loggedIn === true) {
+    //     setLoginStatus(response.data.user[0].username);
+    //   }
+    // });
   }, []);
 
   return (

@@ -13,42 +13,42 @@ export default function SignIn() {
   axios.defaults.withCredentials = true;
 
   const login = () => {
-    axios
-      .post("http://localhost:3001/login", {
-        username: username,
-        password: password,
-      })
-      .then((response) => {
-        if (response.data.message) {
-          console.log(response.data.message);
-        } else {
-          console.log("logged in");
-          console.log(response);
-          if (response.data[0].role == "Applicant")
-            history.push("/client-dashboard");
-          else if (response.data[0].role == "Admin")
-            history.push("/admin-dashboard");
-          else if (response.data[0].role == "Reviewer")
-            history.push("/reviewer-dashboard");
-        }
-      });
+    // axios
+    //   .post("http://localhost:3001/login", {
+    //     username: username,
+    //     password: password,
+    //   })
+    //   .then((response) => {
+    //     if (response.data.message) {
+    //       console.log(response.data.message);
+    //     } else {
+    //       console.log("logged in");
+    //       console.log(response);
+    //       if (response.data[0].role == "Applicant")
+    //         history.push("/client-dashboard");
+    //       else if (response.data[0].role == "Admin")
+    //         history.push("/admin-dashboard");
+    //       else if (response.data[0].role == "Reviewer")
+    //         history.push("/reviewer-dashboard");
+    //     }
+    //   });
   };
   const newAccount = () => {
     history.push("/sign-up");
   };
 
   useEffect(() => {
-    axios.get("http://localhost:3001/login").then((response) => {
-      if (response.data.loggedIn === true) {
-        console.log("already logged in");
-        if (response.data.user[0].role == "Applicant")
-          history.push("/client-dashboard");
-        else if (response.data.user[0].role == "Admin")
-          history.push("/admin-dashboard");
-        else if (response.data.user[0].role == "Reviewer")
-          history.push("/reviewer-dashboard");
-      }
-    });
+    // axios.get("http://localhost:3001/login").then((response) => {
+    //   if (response.data.loggedIn === true) {
+    //     console.log("already logged in");
+    //     if (response.data.user[0].role == "Applicant")
+    //       history.push("/client-dashboard");
+    //     else if (response.data.user[0].role == "Admin")
+    //       history.push("/admin-dashboard");
+    //     else if (response.data.user[0].role == "Reviewer")
+    //       history.push("/reviewer-dashboard");
+    //   }
+    // });
   }, []);
 
   //   return (

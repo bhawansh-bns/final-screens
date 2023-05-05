@@ -34,48 +34,48 @@ function SignUp() {
   };
 
   const signUp = () => {
-    axios
-      .post("http://localhost:3001/register", {
-        username: userName,
-        password: password,
-        email: email,
-        role: role,
-      })
-      .then((response) => {
-        console.log(response);
-        if (role == "Applicant") {
-          cordaAccount(8443, userName);
-        } else if (role == "Admin") {
-          cordaAccount(8446, userName);
-        } else if (role == "Reviewer") {
-          cordaAccount(8449, userName);
-        }
-        history.push("/sign-in");
-      });
+    // axios
+    //   .post("http://localhost:3001/register", {
+    //     username: userName,
+    //     password: password,
+    //     email: email,
+    //     role: role,
+    //   })
+    //   .then((response) => {
+    //     console.log(response);
+    //     if (role == "Applicant") {
+    //       cordaAccount(8443, userName);
+    //     } else if (role == "Admin") {
+    //       cordaAccount(8446, userName);
+    //     } else if (role == "Reviewer") {
+    //       cordaAccount(8449, userName);
+    //     }
+    //     history.push("/sign-in");
+    //   });
 
     history.push("/sign-in");
   };
 
   useEffect(() => {
-    axios.get("http://localhost:3001/login").then((response) => {
-      if (response.data.loggedIn === true) {
-        console.log("logged in");
-        if (response.data.user[0].role == "Applicant") {
-          // cordaAccount(port, response.data.user[0].username);
-          // shareAccount(port, response.data.user[0].username, "Admin");
-          history.push("/client-dashboard");
-        } else if (response.user.data[0].role == "Admin") {
-          // cordaAccount(port, response.data.user[0].username);
-          // shareAccount(port, response.data.user[0].username, "Applicant");
-          // shareAccount(port, response.data.user[0].username, "Reviewer");
-          history.push("/admin-dashboard");
-        } else if (response.user.data[0].role == "Reviewer") {
-          // cordaAccount(port, response.data.user[0].username);
-          // shareAccount(port, response.data.user[0].username, "Admin");
-          history.push("/reviewer-dashboard");
-        }
-      }
-    });
+    // axios.get("http://localhost:3001/login").then((response) => {
+    //   if (response.data.loggedIn === true) {
+    //     console.log("logged in");
+    //     if (response.data.user[0].role == "Applicant") {
+    //       // cordaAccount(port, response.data.user[0].username);
+    //       // shareAccount(port, response.data.user[0].username, "Admin");
+    //       history.push("/client-dashboard");
+    //     } else if (response.user.data[0].role == "Admin") {
+    //       // cordaAccount(port, response.data.user[0].username);
+    //       // shareAccount(port, response.data.user[0].username, "Applicant");
+    //       // shareAccount(port, response.data.user[0].username, "Reviewer");
+    //       history.push("/admin-dashboard");
+    //     } else if (response.user.data[0].role == "Reviewer") {
+    //       // cordaAccount(port, response.data.user[0].username);
+    //       // shareAccount(port, response.data.user[0].username, "Admin");
+    //       history.push("/reviewer-dashboard");
+    //     }
+    //   }
+    // });
   }, []);
 
   return (

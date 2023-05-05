@@ -35,34 +35,35 @@ export default function Feedback() {
     setLicenses(getLicences_response);
   };
   const fetchData = () => {
-    axios.get("http://localhost:3001/login").then((response) => {
-      console.log(response);
-      if (
-        response.data.loggedIn === true &&
-        response.data.user[0].role == "Admin"
-      ) {
-        // accountName = response.data.user[0].username;
-        port1 = 8446;
-        setPort(8446);
-        account1 = response.data.user[0].username;
-        setAccount(account1);
-        console.log(account);
-        getLicenses();
-      } else if (
-        response.data.loggedIn === true &&
-        response.data.user[0].role == "Applicant"
-      ) {
-        // accountName = response.data.user[0].username;
-        port1 = 8443;
-        setPort(8443);
-        account1 = response.data.user[0].username;
-        setAccount(account1);
-        console.log(account);
-        getLicenses();
-      } else {
-        history.push("/sign-in");
-      }
-    });
+    // axios.get("http://localhost:3001/login").then((response) => {
+    //   console.log(response);
+    //   if (
+    //     response.data.loggedIn === true &&
+    //     response.data.user[0].role == "Admin"
+    //   ) {
+    //     // accountName = response.data.user[0].username;
+    //     port1 = 8446;
+    //     setPort(8446);
+    //     account1 = response.data.user[0].username;
+    //     setAccount(account1);
+    //     console.log(account);
+    //     getLicenses();
+    //   } else if (
+    //     response.data.loggedIn === true &&
+    //     response.data.user[0].role == "Applicant"
+    //   ) {
+    //     // accountName = response.data.user[0].username;
+    //     port1 = 8443;
+    //     setPort(8443);
+    //     account1 = response.data.user[0].username;
+    //     setAccount(account1);
+    //     console.log(account);
+    //     getLicenses();
+    //   } else {
+    //     history.push("/sign-in");
+    //   }
+    // });
+    getLicenses();
   };
   //   const getFeedback = () => {
   //     axios

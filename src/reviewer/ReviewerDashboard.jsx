@@ -15,18 +15,19 @@ const ReviewerDashboard = () => {
 
   let accountName;
   const fetchData = () => {
-    axios.get("http://localhost:3001/login").then((response) => {
-      if (
-        response.data.loggedIn === true &&
-        response.data.user[0].role == "Reviewer"
-      ) {
-        accountName = response.data.user[0].username;
-        setAccount(accountName);
-        loadApplications();
-      } else {
-        history.push("/sign-in");
-      }
-    });
+    // axios.get("http://localhost:3001/login").then((response) => {
+    //   if (
+    //     response.data.loggedIn === true &&
+    //     response.data.user[0].role == "Reviewer"
+    //   ) {
+    //     accountName = response.data.user[0].username;
+    //     setAccount(accountName);
+    //     loadApplications();
+    //   } else {
+    //     history.push("/sign-in");
+    //   }
+    // });
+    loadApplications();
   };
   const loadApplications = () => {
     // axios

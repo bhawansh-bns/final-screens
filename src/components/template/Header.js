@@ -8,15 +8,15 @@ import axios from "axios";
 const Header = () => {
   const history = useHistory();
   const logout = () => {
-    axios.post("http://localhost:3001/logout", {}).then((response) => {
-      if (response.data.message) {
-        console.log("logged out");
-        history.push("/sign-in");
-      } else {
-        console.log("Log in first");
-        history.push("/");
-      }
-    });
+    // axios.post("http://localhost:3001/logout", {}).then((response) => {
+    //   if (response.data.message) {
+    //     console.log("logged out");
+    //     history.push("/sign-in");
+    //   } else {
+    //     console.log("Log in first");
+    //     history.push("/");
+    //   }
+    // });
   };
   return (
     <header className={styles.header}>

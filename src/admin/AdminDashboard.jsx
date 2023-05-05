@@ -15,21 +15,22 @@ const AdminDashboard = () => {
   let account1;
 
   const fetchData = () => {
-    axios.get("http://localhost:3001/login").then((response) => {
-      if (
-        response.data.loggedIn === true &&
-        response.data.user[0].role == "Admin"
-      ) {
-        // accountName = response.data.user[0].username;
+    // axios.get("http://localhost:3001/login").then((response) => {
+    //   if (
+    //     response.data.loggedIn === true &&
+    //     response.data.user[0].role == "Admin"
+    //   ) {
+    //     // accountName = response.data.user[0].username;
 
-        account1 = response.data.user[0].username;
-        setAccount(account1);
-        console.log(account);
-        loadApplications();
-      } else {
-        history.push("/sign-in");
-      }
-    });
+    //     account1 = response.data.user[0].username;
+    //     setAccount(account1);
+    //     console.log(account);
+    //     loadApplications();
+    //   } else {
+    //     history.push("/sign-in");
+    //   }
+    // });
+    loadApplications();
   };
   const loadApplications = () => {
     // axios
