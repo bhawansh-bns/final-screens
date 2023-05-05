@@ -6,6 +6,7 @@ import Table from "../components/table/Table";
 import styles from "./AdminDashboardStyles.module.css";
 import SearchPopupAdmin from "./SearchPopupAdmin";
 import { useHistory } from "react-router-dom";
+import { getApplications_response } from "../temp-variables/tempResponses";
 
 const AdminDashboard = () => {
   const [applications, setApplications] = useState([]);
@@ -31,13 +32,14 @@ const AdminDashboard = () => {
     });
   };
   const loadApplications = () => {
-    axios
-      .get(`https://localhost:8446/getApplications/${account1}`)
-      .then((res) => {
-        console.log(res.data);
-        setApplications(res.data);
-      })
-      .catch((err) => console.error(err));
+    // axios
+    //   .get(`https://localhost:8446/getApplications/${account1}`)
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     setApplications(res.data);
+    //   })
+    //   .catch((err) => console.error(err));
+    setApplications(getApplications_response);
   };
 
   useEffect(() => {

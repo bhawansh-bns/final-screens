@@ -5,6 +5,10 @@ import { Stack } from "@mui/material";
 
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import {
+  getLicences_response,
+  getFeedback_response,
+} from "../../temp-variables/tempResponses";
 
 export default function Feedback() {
   const [companyName, setCompanyName] = useState("");
@@ -18,16 +22,17 @@ export default function Feedback() {
   const [port, setPort] = useState("");
 
   const getLicenses = () => {
-    try {
-      axios
-        .get(`https://localhost:${port1}/getLicences/${account1}`)
-        .then((res) => {
-          console.log(res.data);
-          setLicenses(res.data);
-        });
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   axios
+    //     .get(`https://localhost:${port1}/getLicences/${account1}`)
+    //     .then((res) => {
+    //       console.log(res.data);
+    //       setLicenses(res.data);
+    //     });
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    setLicenses(getLicences_response);
   };
   const fetchData = () => {
     axios.get("http://localhost:3001/login").then((response) => {
@@ -77,13 +82,15 @@ export default function Feedback() {
   };
 
   const handleGetFeedback = () => {
-    console.log(port);
-    axios
-      .get(`https://localhost:${port}/getFeedback/${account}/${companyName}`)
-      .then((res) => {
-        console.log(res.data);
-        setFeedback(res.data);
-      });
+    //   console.log(port);
+    //   axios
+    //     .get(`https://localhost:${port}/getFeedback/${account}/${companyName}`)
+    //     .then((res) => {
+    //       console.log(res.data);
+    //       setFeedback(res.data);
+    //     });
+    //   setShowPopup(true);
+    setFeedback(getFeedback_response);
     setShowPopup(true);
   };
 

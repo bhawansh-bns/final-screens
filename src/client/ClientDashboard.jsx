@@ -7,6 +7,7 @@ import Table from "../components/table/Table";
 import axios from "axios";
 import styles from "./ClientDashboardStyles.module.css";
 import { useHistory } from "react-router-dom";
+import { getApplications_response } from "../temp-variables/tempResponses";
 
 const ClientDashboard = () => {
   const [applications, setApplications] = useState([]);
@@ -28,13 +29,14 @@ const ClientDashboard = () => {
     });
   };
   const loadApplications = () => {
-    axios
-      .get(`https://localhost:8443/getApplications/${accountName}`)
-      .then((res) => {
-        console.log(res.data);
-        setApplications(res.data);
-      })
-      .catch((err) => console.error(err));
+    // axios
+    //   .get(`https://localhost:8443/getApplications/${accountName}`)
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     setApplications(res.data);
+    //   })
+    //   .catch((err) => console.error(err));
+    setApplications(getApplications_response);
   };
 
   useEffect(() => {

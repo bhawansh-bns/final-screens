@@ -20,19 +20,19 @@ const AdminPopup = ({ companyData, companyName, reviewerName, account }) => {
   };
 
   const handleAssignApplication = (event) => {
-    event.preventDefault();
-    const formattedDate = licenseExpiryDate + "T00:00:00.000";
-    axios
-      .post(
-        `https://localhost:8446/assignApplication/${account}/${companyName}/${reviewerName}/${formattedDate}`
-      )
-      .then((response) => {
-        alert(JSON.stringify(response.data));
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // event.preventDefault();
+    // const formattedDate = licenseExpiryDate + "T00:00:00.000";
+    // axios
+    //   .post(
+    //     `https://localhost:8446/assignApplication/${account}/${companyName}/${reviewerName}/${formattedDate}`
+    //   )
+    //   .then((response) => {
+    //     alert(JSON.stringify(response.data));
+    //     console.log(response.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   };
 
   return (

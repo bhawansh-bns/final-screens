@@ -6,6 +6,7 @@ import { Stack } from "@mui/material";
 import "./ReviewerDashboardStyles.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { getAssignmentsForReviewer_response } from "../temp-variables/tempResponses";
 
 const ReviewerDashboard = () => {
   const [applications, setApplications] = useState([]);
@@ -28,13 +29,14 @@ const ReviewerDashboard = () => {
     });
   };
   const loadApplications = () => {
-    axios
-      .get(`https://localhost:8449/getAssignmentsForReviewer/${accountName}`)
-      .then((res) => {
-        console.log(res.data);
-        setApplications(res.data);
-      })
-      .catch((err) => console.error(err));
+    // axios
+    //   .get(`https://localhost:8449/getAssignmentsForReviewer/${accountName}`)
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     setApplications(res.data);
+    //   })
+    //   .catch((err) => console.error(err));
+    setApplications(getAssignmentsForReviewer_response);
   };
 
   useEffect(() => {

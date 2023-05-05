@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Table from "../components/table/Table";
 import ReviewerPopup from "./ReviewerPopup";
+import { getAssignmentsForCompanyName_response } from "../temp-variables/tempResponses";
 
 function SearchPopup(props) {
   const [companyName, setcompanyName] = useState("");
@@ -13,13 +14,12 @@ function SearchPopup(props) {
   };
 
   const handleSearch = async () => {
-    const response = await fetch(
-      `https://localhost:8449/getAssignments/${accountName}/${companyName}`
-    );
-    const data = await response.json();
-    setCompanyData(data);
+    // const response = await fetch(
+    //   `https://localhost:8449/getAssignments/${accountName}/${companyName}`
+    // );
+    // const data = await response.json();
+    setCompanyData(getAssignmentsForCompanyName_response);
     setShowPopup(true);
-    console.log(data);
   };
 
   const handlePopupClose = () => {

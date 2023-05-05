@@ -13,24 +13,24 @@ function SignUp() {
   axios.defaults.withCredentials = true;
 
   const cordaAccount = (port, accountName) => {
-    axios
-      .post(`https://localhost:${port}/createAccount/${accountName}`, {})
-      .then((response) => {
-        console.log(response);
-        if (port == 8446) {
-          shareAccount(port, accountName, "Applicant");
-          shareAccount(port, accountName, "Reviewer");
-        } else if (port == 8449 || port == 8443) {
-          shareAccount(port, accountName, "Admin");
-        }
-      });
+    // axios
+    //   .post(`https://localhost:${port}/createAccount/${accountName}`, {})
+    //   .then((response) => {
+    //     console.log(response);
+    //     if (port == 8446) {
+    //       shareAccount(port, accountName, "Applicant");
+    //       shareAccount(port, accountName, "Reviewer");
+    //     } else if (port == 8449 || port == 8443) {
+    //       shareAccount(port, accountName, "Admin");
+    //     }
+    //   });
   };
   const shareAccount = (port, accountName, node) => {
-    axios
-      .post(`https://localhost:${port}/shareAccount/${accountName}/${node}`, {})
-      .then((response) => {
-        console.log(response);
-      });
+    // axios
+    //   .post(`https://localhost:${port}/shareAccount/${accountName}/${node}`, {})
+    //   .then((response) => {
+    //     console.log(response);
+    //   });
   };
 
   const signUp = () => {

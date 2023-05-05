@@ -3,6 +3,10 @@ import AdminPopup from "./AdminPopup";
 import Table from "../components/table/Table";
 import Search from "../components/search/Search";
 import axios from "axios";
+import {
+  getAssignmentsForAdmin_response,
+  getReviewers_response,
+} from "../temp-variables/tempResponses";
 
 function SearchPopupAdmin(props) {
   const [companyName, setCompanyName] = useState("");
@@ -23,14 +27,15 @@ function SearchPopupAdmin(props) {
   };
 
   const handleSearch = () => {
-    axios
-      .get(
-        `https://localhost:8446/getAssignments/${accountName}/${companyName}`
-      )
-      .then((res) => {
-        setCompanyData(res.data);
-        console.log(res.data);
-      });
+    // axios
+    //   .get(
+    //     `https://localhost:8446/getAssignments/${accountName}/${companyName}`
+    //   )
+    //   .then((res) => {
+    //     setCompanyData(res.data);
+    //     console.log(res.data);
+    //   });
+    setCompanyData(getAssignmentsForAdmin_response);
     getReviewers();
   };
 
@@ -39,10 +44,11 @@ function SearchPopupAdmin(props) {
   };
 
   const getReviewers = () => {
-    axios.get(`https://localhost:8446/getReviewers`).then((res) => {
-      setList(res.data);
-      console.log(list);
-    });
+    // axios.get(`https://localhost:8446/getReviewers`).then((res) => {
+    //   setList(res.data);
+    //   console.log(list);
+    // });
+    setList(getReviewers_response);
     setShowPopup(true);
   };
 
