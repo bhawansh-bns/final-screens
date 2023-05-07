@@ -7,10 +7,10 @@ import styles from "./AdminDashboardStyles.module.css";
 import SearchPopupAdmin from "./SearchPopupAdmin";
 import { useHistory } from "react-router-dom";
 import { getApplications_response } from "../temp-variables/tempResponses";
-
+import Cards from "../components/cards/Cards";
 const AdminDashboard = () => {
   const [applications, setApplications] = useState([]);
-  const [account, setAccount] = useState("");
+  const [account, setAccount] = useState("hi");
   const history = useHistory();
   let account1;
 
@@ -51,9 +51,8 @@ const AdminDashboard = () => {
     <PageTemplate>
       <Stack direction="column" className={styles.stackContainer}>
         <h2>Admin Dashboard</h2>
-        <Table data={applications} />
+        <Cards data={applications} excludeColumns={[]} account={account} />
         {/* <button onClick={getAssignments} >Get the assignments.</button> */}
-        <SearchPopupAdmin accountName={account} />
       </Stack>
     </PageTemplate>
   );

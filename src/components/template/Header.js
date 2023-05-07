@@ -21,10 +21,10 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <Link to={"/sign-in"}>
-        <Button className={styles.logoBtn}>
+        <button type="button" className="btn btn-primary">
           <img src="" className={styles.logo} alt="" />
           Grep E-Licensing
-        </Button>
+        </button>
       </Link>
       <Link to={"/feedback"}>
         <Button className={styles.logoBtn}>

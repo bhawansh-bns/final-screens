@@ -9,6 +9,8 @@ import AdminDashboard from "./admin/AdminDashboard";
 import TestingPage from "./testing/TestingPage";
 import { Switch } from "react-router";
 import Feedback from "./components/feedback/Feedback";
+import { getApplications_response } from "./temp-variables/tempResponses";
+import Table from "./testing/Modaltest";
 
 function App() {
   return (
@@ -32,7 +34,7 @@ function App() {
         render={(props) => <ReviewerDashboard />}
       />
       <Route path="/feedback" exact render={(props) => <Feedback />} />
-      <Route path="/testing" exact render={(props) => <TestingPage />} />
+      <Route path="/testing" exact render={(props) => <Table />} />
     </Router>
     // <ReviewerDashboard />
   );

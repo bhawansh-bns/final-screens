@@ -8,15 +8,13 @@ import {
   getReviewers_response,
 } from "../temp-variables/tempResponses";
 
-function SearchPopupAdmin(props) {
-  const [companyName, setCompanyName] = useState("");
+function SearchPopupAdmin({ accountName, companyName }) {
   const [companyData, setCompanyData] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   let [list, setList] = useState([]);
   const [reviewerName, setReviewer] = useState("");
 
   //  {{ }}
-  const { accountName } = props;
 
   const handleNameChange = (value) => {
     setReviewer(value);
