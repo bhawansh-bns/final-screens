@@ -1,27 +1,18 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid lightgray;
+.gradient_background {
+  height: 200;
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .company-icon {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1.5rem;
-    font-weight: bold;
+  50% {
+    background-position: 100% 50%;
   }
-  
-  .contact-icon {
-    background-color: #008cba;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 1rem;
-    padding: 0.5rem;
-    cursor: pointer;
+  100% {
+    background-position: 0% 50%;
   }
-  
+}

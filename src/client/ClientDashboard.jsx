@@ -3,7 +3,7 @@ import PageTemplate from "../components/template/PageTemplate";
 import UploadFiles from "./UploadFiles";
 import ListApplications from "./ListApplications";
 import TotalApplications from "./TotalApplications";
-import Table from "../components/table/Table";
+import Cards from "../components/cards/Cards";
 import axios from "axios";
 import styles from "./ClientDashboardStyles.module.css";
 import { useHistory } from "react-router-dom";
@@ -53,7 +53,7 @@ const ClientDashboard = () => {
         <UploadFiles account={account} />
         <h3>My Application List</h3>
         {/* <ListApplications applications={applications} /> */}
-        <Table data={applications} excludeColumns={[]} />
+        <Cards data={applications} excludeColumns={[]} />
 
         <button onClick={loadApplications}>See All Applications</button>
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 
-const PageTemplate = ({children}) => {
+const PageTemplate = ({ children }) => {
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
       <Header />
