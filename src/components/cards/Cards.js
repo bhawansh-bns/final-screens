@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchPopupAdmin from "../../admin/SearchPopupAdmin";
-import "./styles.css";
+import styles from "./styles.css";
 
 const Cards = ({ data, excludeColumns = [], account }) => {
   if (!data || !data.length) {
@@ -59,7 +59,7 @@ const Cards = ({ data, excludeColumns = [], account }) => {
               data-bs-target="#exampleModal"
               onClick={() => setName(item)}
             >
-              <div className="card text-bg-light mb-3">
+              <div className="card bg-info-subtle border border-primary-subtle rounded-3 mb-3">
                 <div class="mx-3 my-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
