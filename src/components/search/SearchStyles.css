@@ -32,7 +32,9 @@
   text-align: start;
   margin: 2px 0;
 }
-
+.dropdown-row:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 input {
   width: 220px;
 }

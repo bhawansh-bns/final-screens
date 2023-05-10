@@ -36,6 +36,9 @@ function SearchPopupAdmin({ accountName, companyName }) {
     setCompanyData(getAssignmentsForAdmin_response);
     getReviewers();
   };
+  useEffect(() => {
+    handleSearch();
+  }, []);
 
   const handlePopupClose = () => {
     setShowPopup(false);
@@ -52,29 +55,17 @@ function SearchPopupAdmin({ accountName, companyName }) {
 
   return (
     <div>
-      <input
-        type="text"
-        value={companyName}
-        onChange={handleInputChange}
-        placeholder="Enter Company Name..."
-      />
-      <button onClick={handleSearch}>Search</button>
-      {showPopup && (
-        <div className="popup">
-          <div className="popup-content">
-            <button className="close-btn" onClick={handlePopupClose}>
-              X
-            </button>
-            <Search onNameChange={handleNameChange} list={list} />
-            <AdminPopup
-              companyData={companyData}
-              companyName={companyName}
-              reviewerName={reviewerName}
-              account={accountName}
-            />
-          </div>
+      <div className="popup">
+        <div className="popup-content">
+          <Search onNameChange={handleNameChange} list={list} />
+          <AdminPopup
+            companyData={companyData}
+            companyName={companyName}
+            reviewerName={reviewerName}
+            account={accountName}
+          />
         </div>
-      )}
+      </div>
     </div>
   );
 }

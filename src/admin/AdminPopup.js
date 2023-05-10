@@ -43,14 +43,20 @@ const AdminPopup = ({ companyData, companyName, reviewerName, account }) => {
         onChange={handleReviewerInputChange}
         placeholder="Enter Reviewer Name to assign the application to..."
       /> */}
+      <div class="form-group my-3">
+        <input
+          type="date"
+          class="form-control col-6"
+          style={{ width: "280px" }}
+          value={licenseExpiryDate}
+          onChange={handleDateInputChange}
+          placeholder="Enter Reviewer Name to assign the application to..."
+        />
+      </div>
 
-      <input
-        type="date"
-        value={licenseExpiryDate}
-        onChange={handleDateInputChange}
-        placeholder="Enter Reviewer Name to assign the application to..."
-      />
-      <button onClick={handleAssignApplication}> Add Reviewer! </button>
+      <button class="btn btn-primary" onClick={handleAssignApplication}>
+        Add Reviewer
+      </button>
       <Table data={companyData} />
 
       <CollateFeedbackLicenseGrant

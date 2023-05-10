@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useEffect } from "react";
 
 function CollateFeedbackLicenseGrant({ companyName, account }) {
   const [adminFeedback, setAdminFeedback] = useState("");
+  const [enable, setEnable] = useState(false);
 
   const handleAdminFeedbackInputChange = (event) => {
     setAdminFeedback(event.target.value);
@@ -22,6 +24,7 @@ function CollateFeedbackLicenseGrant({ companyName, account }) {
     //   .catch((error) => {
     //     console.log(error);
     //   });
+    setEnable(true);
   };
 
   const handleLicenseGrant = (event) => {
@@ -42,13 +45,20 @@ function CollateFeedbackLicenseGrant({ companyName, account }) {
   return (
     <div>
       <input
+        class="form-control my-2"
+        style={{ width: 300 }}
         type="text"
         value={adminFeedback}
         onChange={handleAdminFeedbackInputChange}
         placeholder="Enter Admin Feedback..."
       />
-      <button onClick={handleCollateFeedback}> Collate Feedback </button>
-      <button onClick={handleLicenseGrant}> License Grant </button>
+
+      <button class="btn btn-primary mx-2" onClick={handleCollateFeedback}>
+        Collate Feedback
+      </button>
+      <button class="btn btn-success mx-2" onClick={handleLicenseGrant}>
+        License Grant
+      </button>
     </div>
   );
 }

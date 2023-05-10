@@ -81,17 +81,17 @@ const Sidebar = () => {
     //     </div>
     //   </span>
     // </div>
-    <div class="d-flex flex-column flex-shrink-0 p-3 bg-white border border-3 border-end">
+    <div class="d-flex flex-column flex-shrink-0 bg-white border border-3 border-end">
       <a
         href="/"
-        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+        class="d-flex align-items-center mx-auto mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
       >
         {/* <svg class="bi pe-none me-2" width="40" height="32">
           <use xlink:href="#bootstrap"></use>
         </svg> */}
         <span class="fs-4">Menu</span>
       </a>
-      <ul class="nav nav-pills flex-column mb-auto">
+      <ul class="nav nav-pills p-3 flex-column mb-auto">
         <li class="nav-item">
           <a href="#" class="nav-link link-body-emphasis">
             <svg
@@ -109,7 +109,7 @@ const Sidebar = () => {
           </a>
         </li>
         <li class="nav-item text-nowrap">
-          <a href="#" class="nav-link text-black">
+          <a href="/feedback" class="nav-link text-black">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"

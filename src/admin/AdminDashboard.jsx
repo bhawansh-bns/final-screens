@@ -50,7 +50,8 @@ const AdminDashboard = () => {
   return (
     <PageTemplate>
       <Stack direction="column" className={styles.stackContainer}>
-        <h2>Admin Dashboard</h2>
+        <h2 class="mx-3">Admin Dashboard</h2>
+        <br />
         <Cards data={applications} excludeColumns={[]} account={account} />
         {/* <button onClick={getAssignments} >Get the assignments.</button> */}
       </Stack>
