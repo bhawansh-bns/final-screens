@@ -3,7 +3,7 @@ import PageTemplate from "../components/template/PageTemplate";
 import UploadFiles from "./UploadFiles";
 import ListApplications from "./ListApplications";
 import TotalApplications from "./TotalApplications";
-import Cards from "../components/cards/Cards";
+import Cards from "../components/ApplicantCard/Cards";
 import axios from "axios";
 import styles from "./ClientDashboardStyles.module.css";
 import { useHistory } from "react-router-dom";
@@ -46,16 +46,72 @@ const ClientDashboard = () => {
 
   return (
     <PageTemplate>
-      <div className={styles.dashboardContainer}>
-        <h2>Applicant Dashboard</h2>
-        <TotalApplications total={applications.length} />
-        <h3>Upload Application</h3>
-        <UploadFiles account={account} />
-        <h3>My Application List</h3>
-        {/* <ListApplications applications={applications} /> */}
-        <Cards data={applications} excludeColumns={[]} />
+      <div className="ms-2 p-3">
+        <div
+          class="modal fade"
+          id="newApplicationModal"
+          tabindex="-1"
+          aria-labelledby="newApplicationModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="newApplicationModalLabel">
+                  New Application
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <UploadFiles account={account} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="ms-2">Applicant Dashboard</h2>
+        <div
+          class="card my-4 ms-2"
+          style={{ width: "18rem" }}
+          data-bs-toggle="modal"
+          data-bs-target="#newApplicationModal"
+        >
+          <div class="card-body">
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                fill="currentColor"
+                class="bi bi-folder2"
+                viewBox="0 0 16 16"
+              >
+                <path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z" />
+              </svg>
+              <div>
+                <p class="card-text">Number of Applications</p>
+                <h6 class="fs-3" style={{ textAlign: "center" }}>
+                  {applications.length}
+                </h6>
+              </div>
+            </div>
 
-        <button onClick={loadApplications}>See All Applications</button>
+            <h5 class="text-center mt-3">Click to apply</h5>
+          </div>
+        </div>
+        <h3 class="mb-4 ms-2">My Applications</h3>
+        {/* <ListApplications applications={applications} /> */}
+        <Cards class="ms-2" data={applications} excludeColumns={[]} />
       </div>
     </PageTemplate>
   );

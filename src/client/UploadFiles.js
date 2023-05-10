@@ -41,7 +41,6 @@ const UploadFiles = (props) => {
     //   setShowPopup(!showPopup);
     // });
     setList(getAdmins_response);
-    setShowPopup(!showPopup);
   };
 
   const handleCompanyInputChange = (event) => {
@@ -52,42 +51,35 @@ const UploadFiles = (props) => {
     setAdmin(event.target.value);
   };
 
-  const handlePopup = () => {
+  useEffect(() => {
     getAdmins();
-  };
-
+  }, []);
   return (
     <div>
-      <button onClick={handlePopup}>New Application!</button>
-      {
-        showPopup && (
-          <>
-            <input
-              type="text"
-              value={companyName}
-              onChange={handleCompanyInputChange}
-              placeholder="Enter your Company Name..."
-            />
-            {/* <input
+      <input
+        class="form-control my-4"
+        style={{ width: "18rem" }}
+        type="text"
+        value={companyName}
+        onChange={handleCompanyInputChange}
+        placeholder="Enter your Company Name..."
+      />
+      {/* <input
               type="text"
               value={adminName}
               onChange={handleAdminInputChange}
               placeholder="Choose your Admin..."
             /> */}
 
-            <Search onNameChange={handleNameChange} list={list} />
+      <Search onNameChange={handleNameChange} list={list} />
 
-            <UploadForm
-              selectedFile={selectedFile}
-              onFileChange={onFileChange}
-              onFileUpload={() => onFileUpload(adminName, companyName)}
-              adminName={adminName}
-              companyName={companyName}
-            />
-          </>
-        )
-        /* <UploadedFile uploadedFile={uploadedFile} /> */
-      }
+      <UploadForm
+        selectedFile={selectedFile}
+        onFileChange={onFileChange}
+        onFileUpload={() => onFileUpload(adminName, companyName)}
+        adminName={adminName}
+        companyName={companyName}
+      />
     </div>
   );
 };

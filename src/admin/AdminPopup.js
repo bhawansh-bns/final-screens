@@ -43,7 +43,7 @@ const AdminPopup = ({ companyData, companyName, reviewerName, account }) => {
         onChange={handleReviewerInputChange}
         placeholder="Enter Reviewer Name to assign the application to..."
       /> */}
-      <div class="form-group my-3">
+      <div class="form-group my-4">
         <input
           type="date"
           class="form-control col-6"
@@ -54,7 +54,7 @@ const AdminPopup = ({ companyData, companyName, reviewerName, account }) => {
         />
       </div>
 
-      <button class="btn btn-primary" onClick={handleAssignApplication}>
+      <button class="btn btn-primary mb-4" onClick={handleAssignApplication}>
         Add Reviewer
       </button>
       <Table data={companyData} />

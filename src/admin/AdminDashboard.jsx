@@ -7,7 +7,7 @@ import styles from "./AdminDashboardStyles.module.css";
 import SearchPopupAdmin from "./SearchPopupAdmin";
 import { useHistory } from "react-router-dom";
 import { getApplications_response } from "../temp-variables/tempResponses";
-import Cards from "../components/cards/Cards";
+import Cards from "../components/AdminCard/Cards";
 const AdminDashboard = () => {
   const [applications, setApplications] = useState([]);
   const [account, setAccount] = useState("hi");

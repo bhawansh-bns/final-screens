@@ -45,7 +45,7 @@ function CollateFeedbackLicenseGrant({ companyName, account }) {
   return (
     <div>
       <input
-        class="form-control my-2"
+        class="form-control my-4"
         style={{ width: 300 }}
         type="text"
         value={adminFeedback}
@@ -53,10 +53,10 @@ function CollateFeedbackLicenseGrant({ companyName, account }) {
         placeholder="Enter Admin Feedback..."
       />
 
-      <button class="btn btn-primary mx-2" onClick={handleCollateFeedback}>
+      <button class="btn btn-primary me-2" onClick={handleCollateFeedback}>
         Collate Feedback
       </button>
-      <button class="btn btn-success mx-2" onClick={handleLicenseGrant}>
+      <button class="btn btn-success ms-2" onClick={handleLicenseGrant}>
         License Grant
       </button>
     </div>

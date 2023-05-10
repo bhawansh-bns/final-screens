@@ -21,15 +21,15 @@ const Cards = ({ data, excludeColumns = [], account }) => {
     <div>
       <div
         class="modal fade"
-        id="exampleModal"
+        id="getAssignmentsModal"
         tabindex="-1"
-        aria-labelledby="exampleModalLabel"
+        aria-labelledby="getAssignmentsModalLabel"
         aria-hidden="true"
       >
         <div class="modal-dialog modal-dialog-scrollable modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">
+              <h1 class="modal-title fs-5" id="getAssignmentsModalLabel">
                 Assignments
               </h1>
               <button
@@ -56,7 +56,7 @@ const Cards = ({ data, excludeColumns = [], account }) => {
               className="col-md-3 mb-2 mx-2"
               key={item.id}
               data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
+              data-bs-target="#getAssignmentsModal"
               onClick={() => setName(item)}
             >
               <div className="card border border-primary-subtle rounded-3 mb-3">

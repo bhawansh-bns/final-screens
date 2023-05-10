@@ -1,18 +1,27 @@
-import React from 'react';
+import React from "react";
 
-const UploadForm = ({ selectedFile, onFileChange, onFileUpload, adminName, companyName}) => {
+const UploadForm = ({
+  selectedFile,
+  onFileChange,
+  onFileUpload,
+  adminName,
+  companyName,
+}) => {
   return (
-    <div>
-      <input  type="file" onChange={onFileChange} />
-      <button onClick={() => onFileUpload(adminName, companyName)} disabled={!selectedFile}>
+    <div class="my-4">
+      <input class="form-control my-2" type="file" onChange={onFileChange} />
+      <p>Please upload the relevant forms</p>
+      <button
+        class="btn btn-primary my-2"
+        onClick={() => onFileUpload(adminName, companyName)}
+        disabled={!selectedFile}
+      >
         Upload!
       </button>
-      {!selectedFile && <p>Upload your Application.pdf</p>}
     </div>
   );
 };
 
 export default UploadForm;
-
 
 // onClick={ () => {onFileUpload(); loadApplications();}}
