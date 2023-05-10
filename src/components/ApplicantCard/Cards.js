@@ -129,6 +129,7 @@ const Cards = ({ data, excludeColumns = [], account }) => {
                     Company Name: {item.CompanyName}
                   </h6>
                   <p className="card-text">Stage: {item.Stage}</p>
+                  <h5 class="text-center mt-3">Click to apply</h5>
                 </div>
               </div>
             </div>

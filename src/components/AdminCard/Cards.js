@@ -53,7 +53,7 @@ const Cards = ({ data, excludeColumns = [], account }) => {
         <div className="row">
           {data.map((item) => (
             <div
-              className="col-md-3 mb-2 mx-2"
+              className="col-md-3 mb-2"
               key={item.id}
               data-bs-toggle="modal"
               data-bs-target="#getAssignmentsModal"
