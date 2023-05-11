@@ -1,26 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Table from "../components/table/Table";
 import ReviewerPopup from "./ReviewerPopup";
 import { getAssignmentsForCompanyName_response } from "../temp-variables/tempResponses";
 
 function SearchPopup(props) {
-  const [companyName, setcompanyName] = useState("");
   const [companyData, setCompanyData] = useState([]);
-  const [showPopup, setShowPopup] = useState(false);
-  const { accountName } = props;
+  const { accountName, companyName } = props;
 
   const handleInputChange = (event) => {
     setcompanyName(event.target.value);
   };
 
-  const handleSearch = async () => {
+  const fetchData = async () => {
     // const response = await fetch(
     //   `https://localhost:8449/getAssignments/${accountName}/${companyName}`
     // );
     // const data = await response.json();
     setCompanyData(getAssignmentsForCompanyName_response);
-    setShowPopup(true);
   };
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const handlePopupClose = () => {
     setShowPopup(false);
@@ -28,28 +28,15 @@ function SearchPopup(props) {
 
   return (
     <div>
-      <input
-        type="text"
-        value={companyName}
-        onChange={handleInputChange}
-        placeholder="Enter Company Name..."
-      />
-      <button onClick={handleSearch}>Search</button>
-      {showPopup && (
-        <div className="popup">
-          <div className="popup-content">
-            <button className="close-btn" onClick={handlePopupClose}>
-              X
-            </button>
-
-            <ReviewerPopup
-              companyName={companyName}
-              companyData={companyData}
-              accountName={accountName}
-            />
-          </div>
+      <div className="popup">
+        <div className="popup-content">
+          <ReviewerPopup
+            companyName={companyName}
+            companyData={companyData}
+            accountName={accountName}
+          />
         </div>
-      )}
+      </div>
     </div>
   );
 }

@@ -24,7 +24,7 @@ const Cards = ({ data, excludeColumns = [], account }) => {
         aria-labelledby="applicationDetailsModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-scrollable modal-md">
+        <div class="modal-dialog modal-lg" style={{ width: "650px" }}>
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="applicationDetailsModalLabel">
@@ -68,7 +68,10 @@ const Cards = ({ data, excludeColumns = [], account }) => {
               data-bs-target="#applicationDetailsModal"
               onClick={() => setName(item)}
             >
-              <div className="card border border-primary-subtle rounded-3 mb-3">
+              <div
+                className="card border border-primary-subtle rounded-3 mb-3"
+                style={{ position: "relative" }}
+              >
                 <div class="mx-3 my-3">
                   {item.Stage == "submitted" ? (
                     <svg
@@ -111,7 +114,7 @@ const Cards = ({ data, excludeColumns = [], account }) => {
                     >
                       <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z" />
                     </svg>
-                  ) : (
+                  ) : item.Stage == "under_review" ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="30"
@@ -122,14 +125,40 @@ const Cards = ({ data, excludeColumns = [], account }) => {
                     >
                       <path d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z" />
                     </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-x-circle-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                    </svg>
                   )}
                 </div>
-                <div className="card-body bg-info rounded-bottom-3 text-white">
+                <div
+                  className="card-body rounded-bottom-3 text-white"
+                  style={{ background: "#00bfff" }}
+                >
                   <h6 className="card-title">
                     Company Name: {item.CompanyName}
                   </h6>
                   <p className="card-text">Stage: {item.Stage}</p>
-                  <h5 class="text-center mt-3">Click to apply</h5>
+
+                  <div
+                    class="me-2"
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      right: 0,
+                      fontSize: "12px",
+                      fontStyle: "italic",
+                    }}
+                  >
+                    <p class="text-right mt-3">Click to see details</p>
+                  </div>
                 </div>
               </div>
             </div>

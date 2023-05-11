@@ -27,12 +27,7 @@ const Table = ({ data, excludeColumns = [], account }) => {
         </thead>
         <tbody>
           {data.map((row, index) => (
-            <tr
-              key={index}
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              onClick={() => setName(row)}
-            >
+            <tr key={index} onClick={() => setName(row)}>
               {filteredColumns.map((key, index) => (
                 <td key={index}>{row[key]}</td>
               ))}

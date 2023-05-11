@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import PageTemplate from "../components/template/PageTemplate";
-import Table from "../components/table/Table";
 import SearchPopup from "./SearchPopup";
 import { Stack } from "@mui/material";
 import "./ReviewerDashboardStyles.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { getAssignmentsForReviewer_response } from "../temp-variables/tempResponses";
+import Cards from "../components/ReviewerCard/Cards";
 
 const ReviewerDashboard = () => {
-  const [applications, setApplications] = useState([]);
+  const [assignments, setAssignments] = useState([]);
   const history = useHistory();
   const [account, setAccount] = useState("");
 
@@ -27,9 +27,9 @@ const ReviewerDashboard = () => {
     //     history.push("/sign-in");
     //   }
     // });
-    loadApplications();
+    loadAssignments();
   };
-  const loadApplications = () => {
+  const loadAssignments = () => {
     // axios
     //   .get(`https://localhost:8449/getAssignmentsForReviewer/${accountName}`)
     //   .then((res) => {
@@ -37,7 +37,7 @@ const ReviewerDashboard = () => {
     //     setApplications(res.data);
     //   })
     //   .catch((err) => console.error(err));
-    setApplications(getAssignmentsForReviewer_response);
+    setAssignments(getAssignmentsForReviewer_response);
   };
 
   useEffect(() => {
@@ -48,8 +48,7 @@ const ReviewerDashboard = () => {
     <PageTemplate>
       <div className="reviewerDashboard">
         <h2>Reviewer Dashboard</h2>
-        <Table data={applications} />
-        <SearchPopup accountName={account} />
+        <Cards data={assignments} excludeColumns={[]} account={account} />
       </div>
     </PageTemplate>
   );

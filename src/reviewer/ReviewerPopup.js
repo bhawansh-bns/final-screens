@@ -62,16 +62,24 @@ const ReviewerPopup = ({ companyData, companyName, accountName }) => {
 
   return (
     <div>
-      <Table data={companyData} />
-      <button onClick={handleDownload}> View the application! </button>
+      <Table data={companyData} excludeColumns={["App_Id"]} />
+      <button class="btn btn-primary my-2" onClick={handleDownload}>
+        View the application
+      </button>
       <input
+        class="form-control my-2"
         type="text"
+        style={{ width: "24rem" }}
         value={reviewerFeedback}
         onChange={handleInputChange}
         placeholder="Enter feedback..."
       />
-      <button onClick={handleAccept}> Accept </button>
-      <button onClick={handleReject}> Reject </button>
+      <button class="btn btn-success my-2 me-4" onClick={handleAccept}>
+        Accept
+      </button>
+      <button class="btn btn-danger my-2" onClick={handleReject}>
+        Reject
+      </button>
     </div>
   );
 };

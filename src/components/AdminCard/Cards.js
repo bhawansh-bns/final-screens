@@ -115,7 +115,10 @@ const Cards = ({ data, excludeColumns = [], account }) => {
                     </svg>
                   )}
                 </div>
-                <div className="card-body bg-info rounded-bottom-3 text-white">
+                <div
+                  className="card-body rounded-bottom-3 text-white"
+                  style={{ background: "#9370DB" }}
+                >
                   <h6 className="card-title">
                     Company Name: {item.CompanyName}
                   </h6>

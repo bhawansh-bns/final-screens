@@ -9,7 +9,12 @@ const UploadForm = ({
 }) => {
   return (
     <div class="my-4">
-      <input class="form-control my-2" type="file" onChange={onFileChange} />
+      <input
+        class="form-control my-2"
+        type="file"
+        onChange={onFileChange}
+        style={{ width: "18rem" }}
+      />
       <p>Please upload the relevant forms</p>
       <button
         class="btn btn-primary my-2"
