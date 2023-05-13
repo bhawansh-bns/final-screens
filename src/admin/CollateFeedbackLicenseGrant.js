@@ -11,35 +11,35 @@ function CollateFeedbackLicenseGrant({ companyName, account }) {
   };
 
   const handleCollateFeedback = (event) => {
-    // event.preventDefault();
-    // axios
-    //   .post(
-    //     `https://localhost:8446/collateFeedback/${companyName}/${account}`,
-    //     adminFeedback
-    //   )
-    //   .then((response) => {
-    //     alert(JSON.stringify(response.data));
-    //     console.log(response.data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    event.preventDefault();
+    axios
+      .post(
+        `https://localhost:8446/collateFeedback/${companyName}/${account}`,
+        adminFeedback
+      )
+      .then((response) => {
+        alert(JSON.stringify(response.data));
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     setEnable(true);
   };
 
   const handleLicenseGrant = (event) => {
-    // event.preventDefault();
-    // axios
-    //   .post(
-    //     `https://localhost:8446/licenceGrant/${companyName}/${account}/2024-09-04T10:44:46.000`
-    //   )
-    //   .then((response) => {
-    //     alert(JSON.stringify(response.data));
-    //     console.log(response.data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    event.preventDefault();
+    axios
+      .post(
+        `https://localhost:8446/licenceGrant/${companyName}/${account}/2024-09-04T10:44:46.000`
+      )
+      .then((response) => {
+        alert(JSON.stringify(response.data));
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (

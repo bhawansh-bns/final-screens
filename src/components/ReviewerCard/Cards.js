@@ -61,8 +61,8 @@ const Cards = ({ data, excludeColumns = [], account }) => {
                   {item.Stage == "assigned" ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
+                      width="20"
+                      height="20"
                       fill="currentColor"
                       class="bi bi-eye-slash-fill"
                       viewBox="0 0 16 16"
@@ -84,8 +84,8 @@ const Cards = ({ data, excludeColumns = [], account }) => {
                   ) : item.Stage == "reviewed" ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
+                      width="20"
+                      height="20"
                       fill="currentColor"
                       class="bi bi-eye-fill"
                       viewBox="0 0 16 16"

@@ -5,6 +5,7 @@ import Search from "../components/search/Search";
 import axios from "axios";
 import { getAdmins_response } from "../temp-variables/tempResponses";
 
+
 const UploadFiles = (props) => {
   const [selectedFile, setSelectedFile] = useState(null);
   let [list, setList] = useState([]);
@@ -22,25 +23,26 @@ const UploadFiles = (props) => {
   };
 
   const onFileUpload = (adminName, companyName) => {
-    // let formData = new FormData();
-    // formData.append("file", selectedFile);
-    // axios
-    //   .post(
-    //     `https://localhost:8443/sendApplication/${account}/${adminName}/${companyName}`,
-    //     formData
-    //   )
-    //   .then((res) => {
-    //     console.log(res.data);
-    //   });
+    let formData = new FormData();
+    formData.append("file", selectedFile);
+    axios
+      .post(
+        `https://localhost:8443/sendApplication/${account}/${adminName}/${companyName}`,
+        formData
+      )
+      .then((res) => {
+        console.log(res.data);
+        alert(JSON.stringify(res.data));
+      });
   };
 
   const getAdmins = () => {
-    // axios.get(`https://localhost:8443/getAdmins`).then((res) => {
-    //   setList(res.data);
-    //   console.log(list);
-    //   setShowPopup(!showPopup);
-    // });
-    setList(getAdmins_response);
+    axios.get(`https://localhost:8443/getAdmins`).then((res) => {
+      setList(res.data);
+      console.log(list);
+      setShowPopup(!showPopup);
+    });
+    // setList(getAdmins_response);
   };
 
   const handleCompanyInputChange = (event) => {

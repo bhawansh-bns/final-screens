@@ -20,29 +20,23 @@ const AdminPopup = ({ companyData, companyName, reviewerName, account }) => {
   };
 
   const handleAssignApplication = (event) => {
-    // event.preventDefault();
-    // const formattedDate = licenseExpiryDate + "T00:00:00.000";
-    // axios
-    //   .post(
-    //     `https://localhost:8446/assignApplication/${account}/${companyName}/${reviewerName}/${formattedDate}`
-    //   )
-    //   .then((response) => {
-    //     alert(JSON.stringify(response.data));
-    //     console.log(response.data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    event.preventDefault();
+    const formattedDate = licenseExpiryDate + "T00:00:00.000";
+    axios
+      .post(
+        `https://localhost:8446/assignApplication/${account}/${companyName}/${reviewerName}/${formattedDate}`
+      )
+      .then((response) => {
+        alert(JSON.stringify(response.data));
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
     <div>
-      {/* <input
-        type="text"
-        value={reviewerName}
-        onChange={handleReviewerInputChange}
-        placeholder="Enter Reviewer Name to assign the application to..."
-      /> */}
       <div class="form-group my-4">
         <input
           type="date"
@@ -57,12 +51,13 @@ const AdminPopup = ({ companyData, companyName, reviewerName, account }) => {
       <button class="btn btn-primary mb-4" onClick={handleAssignApplication}>
         Add Reviewer
       </button>
-      <Table data={companyData} />
+      <Table data={companyData} account="adminPopup"/>
 
       <CollateFeedbackLicenseGrant
         companyName={companyName}
         account={account}
       />
+
     </div>
   );
 };

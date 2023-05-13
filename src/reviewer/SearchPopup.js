@@ -2,29 +2,22 @@ import React, { useState, useEffect } from "react";
 import Table from "../components/table/Table";
 import ReviewerPopup from "./ReviewerPopup";
 import { getAssignmentsForCompanyName_response } from "../temp-variables/tempResponses";
+import axios from "axios";
 
-function SearchPopup(props) {
+function SearchPopup({ accountName, companyName }) {
   const [companyData, setCompanyData] = useState([]);
-  const { accountName, companyName } = props;
 
-  const handleInputChange = (event) => {
-    setcompanyName(event.target.value);
-  };
-
-  const fetchData = async () => {
-    // const response = await fetch(
-    //   `https://localhost:8449/getAssignments/${accountName}/${companyName}`
-    // );
-    // const data = await response.json();
-    setCompanyData(getAssignmentsForCompanyName_response);
+  const getAssignments = async () => {
+    axios.get(`https://localhost:8449/getAssignments/${accountName}/${companyName}`).then((res) => {
+      console.log(res.data);
+      setCompanyData(res.data);
+    })
+    // setCompanyData(getAssignmentsForCompanyName_response);
   };
   useEffect(() => {
-    fetchData();
-  }, []);
+    getAssignments();
+  }, [companyName]);
 
-  const handlePopupClose = () => {
-    setShowPopup(false);
-  };
 
   return (
     <div>

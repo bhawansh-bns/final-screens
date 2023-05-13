@@ -4,7 +4,12 @@ import SearchPopupAdmin from "../../admin/SearchPopupAdmin";
 
 const Table = ({ data, excludeColumns = [], account }) => {
   if (!data || !data.length) {
-    return <h4>Loading...</h4>;
+    if(account === "adminPopup"){
+      return <h4> Assign a Reviewer to see the details.</h4>
+    } else{
+      return <h4>Loading...</h4>;
+    }
+    
   }
 
   const filteredColumns = Object.keys(data[0]).filter(

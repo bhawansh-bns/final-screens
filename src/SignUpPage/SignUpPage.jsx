@@ -11,9 +11,6 @@ function SignUpPage() {
       <div className={styles.signupContainer}>
         <h2>Create an Account</h2>
         <SignUp />
-        <div className={styles.signInLink}>
-          <Link to="/sign-in">Sign In</Link>
-        </div>
       </div>
       <Footer className={styles.footer}/>
     </div>

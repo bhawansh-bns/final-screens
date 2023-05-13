@@ -8,28 +8,28 @@ import axios from "axios";
 const Header = () => {
   const history = useHistory();
   const logout = () => {
-    // axios.post("http://localhost:3001/logout", {}).then((response) => {
-    //   if (response.data.message) {
-    //     console.log("logged out");
-    //     history.push("/sign-in");
-    //   } else {
-    //     console.log("Log in first");
-    //     history.push("/");
-    //   }
-    // });
+    axios.post("http://localhost:3001/logout", {}).then((response) => {
+      if (response.data.message) {
+        console.log("logged out");
+        history.push("/sign-in");
+      } else {
+        console.log("Log in first");
+        history.push("/");
+      }
+    });
   };
   return (
     <section className={styles.gradient_background}>
-      <div class="container my-3">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li class="mt-2">
+      <div className="container my-3">
+        <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li className="mt-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
                 height="30"
                 fill="white"
-                class="bi bi-shield-lock-fill"
+                className="bi bi-shield-lock-fill"
                 viewBox="0 0 16 16"
               >
                 <path
@@ -39,14 +39,14 @@ const Header = () => {
               </svg>
             </li>
             <li>
-              <a href="/" class="nav-link px-2 text-white">
+              <a href="/" className="nav-link px-2 text-white">
                 <h4>E-licensing</h4>
               </a>
             </li>
           </ul>
 
-          <div class="text-end">
-            <button type="button" class="btn btn-outline-light me-2">
+          <div className="text-end">
+            <button type="button" className="btn btn-outline-light me-2" onClick={logout}>
               Logout
             </button>
           </div>

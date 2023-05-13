@@ -70,9 +70,11 @@ const Cards = ({ data, excludeColumns = [], account }) => {
             >
               <div
                 className="card border border-primary-subtle rounded-3 mb-3"
-                style={{ position: "relative" }}
+                style={{ position: "relative",
+                width: "100%",
+                height: "100%",  }}
               >
-                <div class="mx-3 my-3">
+                <div class="mx-5 my-3">
                   {item.Stage == "submitted" ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

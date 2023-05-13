@@ -12,9 +12,13 @@ const Cards = ({ data, excludeColumns = [], account }) => {
   const filteredColumns = Object.keys(data[0]).filter(
     (key) => !excludeColumns.includes(key)
   );
+
+  let companyName1;
+
   const [companyName, setCompanyName] = useState("");
   const setName = (name) => {
-    setCompanyName(name["CompanyName"]);
+    companyName1 = name["CompanyName"]
+    setCompanyName(companyName1);
     console.log(companyName);
   };
   return (
@@ -30,7 +34,7 @@ const Cards = ({ data, excludeColumns = [], account }) => {
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="getAssignmentsModalLabel">
-                Assignments
+                Assignments for {companyName}
               </h1>
               <button
                 type="button"

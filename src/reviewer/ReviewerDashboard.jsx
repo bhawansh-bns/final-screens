@@ -9,35 +9,35 @@ import { getAssignmentsForReviewer_response } from "../temp-variables/tempRespon
 import Cards from "../components/ReviewerCard/Cards";
 
 const ReviewerDashboard = () => {
-  const [assignments, setAssignments] = useState([]);
+  const [assignments,   setAssignments] = useState([]);
   const history = useHistory();
   const [account, setAccount] = useState("");
 
   let accountName;
   const fetchData = () => {
-    // axios.get("http://localhost:3001/login").then((response) => {
-    //   if (
-    //     response.data.loggedIn === true &&
-    //     response.data.user[0].role == "Reviewer"
-    //   ) {
-    //     accountName = response.data.user[0].username;
-    //     setAccount(accountName);
-    //     loadApplications();
-    //   } else {
-    //     history.push("/sign-in");
-    //   }
-    // });
-    loadAssignments();
+    axios.get("http://localhost:3001/login").then((response) => {
+      if (
+        response.data.loggedIn === true &&
+        response.data.user[0].role == "Reviewer"
+      ) {
+        accountName = response.data.user[0].username;
+        setAccount(accountName);
+        loadAssignments();
+      } else {
+        history.push("/sign-in");
+      }
+    });
+    
   };
   const loadAssignments = () => {
-    // axios
-    //   .get(`https://localhost:8449/getAssignmentsForReviewer/${accountName}`)
-    //   .then((res) => {
-    //     console.log(res.data);
-    //     setApplications(res.data);
-    //   })
-    //   .catch((err) => console.error(err));
-    setAssignments(getAssignmentsForReviewer_response);
+    axios
+      .get(`https://localhost:8449/getAssignmentsForReviewer/${accountName}`)
+      .then((res) => {
+        console.log(res.data);
+        setAssignments(res.data);
+      })
+      .catch((err) => console.error(err));
+    // setAssignments(getAssignmentsForReviewer_response);
   };
 
   useEffect(() => {

@@ -22,49 +22,50 @@ export default function Feedback() {
   const [port, setPort] = useState("");
 
   const getLicenses = () => {
-    // try {
-    //   axios
-    //     .get(`https://localhost:${port1}/getLicences/${account1}`)
-    //     .then((res) => {
-    //       console.log(res.data);
-    //       setLicenses(res.data);
-    //     });
-    // } catch (error) {
-    //   console.log(error);
-    // }
-    setLicenses(getLicences_response);
+    try {
+      axios
+        .get(`https://localhost:${port1}/getLicences/${account1}`)
+        .then((res) => {
+          console.log(res.data);
+          setLicenses(res.data);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+    // setLicenses(getLicences_response);
   };
   const fetchData = () => {
-    // axios.get("http://localhost:3001/login").then((response) => {
-    //   console.log(response);
-    //   if (
-    //     response.data.loggedIn === true &&
-    //     response.data.user[0].role == "Admin"
-    //   ) {
-    //     // accountName = response.data.user[0].username;
-    //     port1 = 8446;
-    //     setPort(8446);
-    //     account1 = response.data.user[0].username;
-    //     setAccount(account1);
-    //     console.log(account);
-    //     getLicenses();
-    //   } else if (
-    //     response.data.loggedIn === true &&
-    //     response.data.user[0].role == "Applicant"
-    //   ) {
-    //     // accountName = response.data.user[0].username;
-    //     port1 = 8443;
-    //     setPort(8443);
-    //     account1 = response.data.user[0].username;
-    //     setAccount(account1);
-    //     console.log(account);
-    //     getLicenses();
-    //   } else {
-    //     history.push("/sign-in");
-    //   }
-    // });
-    getLicenses();
+    axios.get("http://localhost:3001/login").then((response) => {
+      console.log(response);
+      if (
+        response.data.loggedIn === true &&
+        response.data.user[0].role == "Admin"
+      ) {
+        // accountName = response.data.user[0].username;
+        port1 = 8446;
+        setPort(8446);
+        account1 = response.data.user[0].username;
+        setAccount(account1);
+        console.log(account);
+        getLicenses();
+      } else if (
+        response.data.loggedIn === true &&
+        response.data.user[0].role == "Applicant"
+      ) {
+        // accountName = response.data.user[0].username;
+        port1 = 8443;
+        setPort(8443);
+        account1 = response.data.user[0].username;
+        setAccount(account1);
+        console.log(account);
+        getLicenses();
+      } else {
+        history.push("/sign-in");
+      }
+    });
+    // getLicenses();
   };
+
   //   const getFeedback = () => {
   //     axios
   //       .get(`https://localhost:8443/getFeedback/${accountName}/${companyName}`)
@@ -83,15 +84,15 @@ export default function Feedback() {
   };
 
   const handleGetFeedback = () => {
-    //   console.log(port);
-    //   axios
-    //     .get(`https://localhost:${port}/getFeedback/${account}/${companyName}`)
-    //     .then((res) => {
-    //       console.log(res.data);
-    //       setFeedback(res.data);
-    //     });
-    //   setShowPopup(true);
-    setFeedback(getFeedback_response);
+      console.log(port);
+      axios
+        .get(`https://localhost:${port}/getFeedback/${account}/${companyName}`)
+        .then((res) => {
+          console.log(res.data);
+          setFeedback(res.data);
+        });
+      setShowPopup(true);
+    // setFeedback(getFeedback_response);
     setShowPopup(true);
   };
 
@@ -127,7 +128,3 @@ export default function Feedback() {
     </PageTemplate>
   );
 }
-
-// Feedback.propTypes = {
-//   accountName: PropTypes.string,
-// };

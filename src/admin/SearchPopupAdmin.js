@@ -20,43 +20,38 @@ function SearchPopupAdmin({ accountName, companyName }) {
     setReviewer(value);
   };
 
-  const handleInputChange = (event) => {
-    setCompanyName(event.target.value);
+  const getAssignments = () => {
+    axios
+      .get(
+        `https://localhost:8446/getAssignments/${accountName}/${companyName}`
+      )
+      .then((res) => {
+        setCompanyData(res.data);
+        console.log(res.data);
+        console.log(companyData);
+      });
   };
 
-  const handleSearch = () => {
-    // axios
-    //   .get(
-    //     `https://localhost:8446/getAssignments/${accountName}/${companyName}`
-    //   )
-    //   .then((res) => {
-    //     setCompanyData(res.data);
-    //     console.log(res.data);
-    //   });
-    setCompanyData(getAssignmentsForAdmin_response);
-    getReviewers();
-  };
   useEffect(() => {
-    handleSearch();
-  }, []);
+    getReviewers();
 
-  const handlePopupClose = () => {
-    setShowPopup(false);
-  };
+  }, [companyName]);
 
   const getReviewers = () => {
-    // axios.get(`https://localhost:8446/getReviewers`).then((res) => {
-    //   setList(res.data);
-    //   console.log(list);
-    // });
-    setList(getReviewers_response);
-    setShowPopup(true);
+    axios.get(`https://localhost:8446/getReviewers`).then((res) => {
+      setList(res.data);
+      console.log(res.data);
+      getAssignments();
+    });
+    // setList(getReviewers_response);
+   
   };
 
   return (
     <div>
       <div className="popup">
         <div className="popup-content">
+          {/* <h1>{companyName}</h1> */}
           <Search onNameChange={handleNameChange} list={list} />
           <AdminPopup
             companyData={companyData}
