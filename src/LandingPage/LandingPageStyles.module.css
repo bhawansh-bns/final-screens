@@ -1,0 +1,17 @@
+.landingpage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-gainsboro-200);
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+}
