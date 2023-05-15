@@ -19,7 +19,7 @@ export default function Licenses() {
   let account1;
   let port1;
   const [port, setPort] = useState("");
-
+  axios.defaults.withCredentials = true;
   const getLicenses = () => {
     try {
       axios
@@ -56,7 +56,7 @@ export default function Licenses() {
         setPort(8443);
         account1 = response.data.user[0].username;
         setAccount(account1);
-        console.log(account);
+        console.log(account1);
         getLicenses();
       } else {
         history.push("/sign-in");
@@ -106,7 +106,7 @@ export default function Licenses() {
                 ></button>
               </div>
               <div class="modal-body">
-                {account1 ? (
+                {account && companyName ? (
                   <Feedback
                     companyName={companyName}
                     account={account}

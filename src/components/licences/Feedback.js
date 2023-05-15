@@ -14,17 +14,13 @@ export default function Feedback({ account, companyName, port }) {
   }, [companyName]);
 
   const getFeedback = () => {
-    console.log(port);
     axios
       .get(`https://localhost:${port}/getFeedback/${account}/${companyName}`)
       .then((res) => {
-        console.log(res.data);
         setFeedback(res.data);
       });
 
     // setFeedback(getFeedbackForApplicant_response);
-    console.log(account);
-    console.log(companyName);
   };
   return (
     <div>

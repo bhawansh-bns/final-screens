@@ -5,7 +5,6 @@ import styles from "./SidebarStyles.module.css";
 
 const Sidebar = ({ flag }) => {
   return (
-
     <div class="d-flex flex-column flex-shrink-0 bg-white border border-3 border-end">
       <a
         href="/"
@@ -19,7 +18,7 @@ const Sidebar = ({ flag }) => {
 
       <ul class="nav nav-pills p-3 flex-column mb-auto">
         <li class="nav-item" key={"1"}>
-          <a href="#" class="nav-link link-body-emphasis">
+          <a href="/sign-in" class="nav-link link-body-emphasis">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -68,7 +67,7 @@ const Sidebar = ({ flag }) => {
             MCA Services
           </a>
         </li>
-        <li class="nav-item text-nowrap" key={"4"} >
+        <li class="nav-item text-nowrap" key={"4"}>
           <a href="#" class="nav-link text-black">
             <svg
               xmlns="http://www.w3.org/2000/svg"
