@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 
 function SignUp() {
-  const [userName, setUserName] = useState("");
+  const [userName, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
@@ -32,7 +32,9 @@ function SignUp() {
         console.log(response);
       });
   };
-
+  const logIn = () => {
+    history.push("/sign-in");
+  };
   const signUp = () => {
     axios
       .post("http://localhost:3001/register", {
@@ -53,7 +55,7 @@ function SignUp() {
         history.push("/sign-in");
       });
 
-    history.push("/sign-in");
+    // history.push("/sign-in");
   };
 
   useEffect(() => {
@@ -79,46 +81,104 @@ function SignUp() {
   }, []);
 
   return (
-    <div className={styles.signupContainer}>
-      <form className={styles.form} onSubmit={signUp}>
-        <label htmlFor="firstName">UserName:</label>
-        <input
-          type="text"
-          id="userName"
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-        />
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+    <div class={styles.gradient_background}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          height: "100vh",
+          maxWidth: "400px",
+          margin: "0 auto",
+        }}
+      >
+        <div class="form-signin w-100 my-30">
+          <div class="d-flex align-items-center text-white">
+            <span class="fs-1 mx-auto">Sign up</span>
+          </div>
+          <div class="form-floating">
+            <input
+              class="form-control my-2"
+              placeholder="Username"
+              wfd-id="id0"
+              type="text"
+              id="userName"
+              value={userName}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <label for="username">Username</label>
+          </div>
+          <div class="form-floating">
+            <input
+              class="form-control my-2"
+              placeholder="name@example.com"
+              wfd-id="id1"
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label for="email">Email</label>
+          </div>
+          <div class="form-floating">
+            <input
+              type="password"
+              class="form-control my-2"
+              placeholder="Password"
+              wfd-id="id2"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <label for="password">Password</label>
+          </div>
+          <div class="dropdown rounded-3  my-4">
+            <button
+              class="btn btn-outline-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {role ? role : "Choose a role"}
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" onClick={() => setRole("Applicant")}>
+                  Applicant
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" onClick={() => setRole("Admin")}>
+                  Admin
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" onClick={() => setRole("Reviewer")}>
+                  Reviewer
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        <label htmlFor="role">Role:</label>
-        <input
-          type="text"
-          id="role"
-          value={role}
-          onChange={(e) => setRole(e.target.value)}
-        />
-        <button type="submit">Sign Up</button>
-      </form>
-      <br></br>
-      <div className={styles.signin}>
-        Already have an account?{" "}
-        <button>
-          <Link to="/sign-in">Sign in</Link>
-        </button>
+          <button class="w-100 btn btn-lg btn-dark" onClick={signUp}>
+            Create Account
+          </button>
+          <div
+            style={{
+              //   position: "absolute",
+              //   bottom: 0,
+              //   right: 0,
+              fontSize: "15px",
+              fontStyle: "italic",
+            }}
+          >
+            <p class="text-right mt-3 text-white pt-3">
+              Already have an account?
+            </p>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary mb-3" onClick={logIn}>
+            Log in
+          </button>
+        </div>
       </div>
     </div>
   );

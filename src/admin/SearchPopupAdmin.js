@@ -47,11 +47,31 @@ function SearchPopupAdmin({ accountName, companyName }) {
    
   };
 
+  const downloadApplication = () => {
+    console.log(companyName);
+    console.log(accountName);
+    event.preventDefault();
+    axios
+      .post(
+        `https://localhost:8443/deleteApplication/${accountName}/${companyName}`
+      )
+      .then((response) => {
+        alert(JSON.stringify(response.data));
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div>
       <div className="popup">
         <div className="popup-content">
           {/* <h1>{companyName}</h1> */}
+          <button class="btn btn-primary my-3" onClick={downloadApplication}>
+            Download Application
+          </button>
           <Search onNameChange={handleNameChange} list={list} />
           <AdminPopup
             companyData={companyData}

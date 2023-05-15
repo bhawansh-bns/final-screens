@@ -44,7 +44,7 @@ const ClientDashboard = () => {
   }, [accountName]);
 
   return (
-    <PageTemplate>
+    <PageTemplate flag={true}>
       <div className="ms-2 p-3">
         <div
           class="modal fade"
@@ -111,7 +111,7 @@ const ClientDashboard = () => {
         </div>
         <h3 class="mb-4 ms-2">My Applications ({applications.length}) </h3>
         {/* <ListApplications applications={applications} /> */}
-        <Cards class="ms-2" data={applications} excludeColumns={[]} />
+        <Cards className="ms-2" data={applications}  />
       </div>
     </PageTemplate>
   );
