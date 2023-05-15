@@ -45,7 +45,7 @@ const ClientDashboard = () => {
   }, [accountName]);
 
   return (
-    <PageTemplate>
+    <PageTemplate flag={true}>
       <div className="ms-2 p-3">
         <div
           class="modal fade"

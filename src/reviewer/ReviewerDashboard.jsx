@@ -45,7 +45,7 @@ const ReviewerDashboard = () => {
   }, [accountName]);
 
   return (
-    <PageTemplate>
+    <PageTemplate flag={false}>
       <div className="reviewerDashboard">
         <h2>Reviewer Dashboard</h2>
         <Cards data={assignments} excludeColumns={[]} account={account} />

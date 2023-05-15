@@ -43,7 +43,22 @@ function SearchPopupAdmin({ accountName, companyName }) {
   const handlePopupClose = () => {
     setShowPopup(false);
   };
-
+  const downloadApplication = () => {
+    console.log(companyName);
+    console.log(accountName);
+    // event.preventDefault();
+    // axios
+    //   .post(
+    //     `https://localhost:8443/deleteApplication/Test/Applicant1`
+    //   )
+    //   .then((response) => {
+    //     alert(JSON.stringify(response.data));
+    //     console.log(response.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+  };
   const getReviewers = () => {
     // axios.get(`https://localhost:8446/getReviewers`).then((res) => {
     //   setList(res.data);
@@ -57,6 +72,9 @@ function SearchPopupAdmin({ accountName, companyName }) {
     <div>
       <div className="popup">
         <div className="popup-content">
+          <button class="btn btn-primary my-3" onClick={downloadApplication}>
+            Download Application
+          </button>
           <Search onNameChange={handleNameChange} list={list} />
           <AdminPopup
             companyData={companyData}

@@ -9,10 +9,10 @@ import {
   getLicences_response,
   getFeedback_response,
 } from "../../temp-variables/tempResponses";
+import Feedback from "./Feedback";
 
-export default function Feedback() {
+export default function Licenses() {
   const [companyName, setCompanyName] = useState("");
-  const [feedback, setFeedback] = useState([]);
   const [licenses, setLicenses] = useState([]);
   const [account, setAccount] = useState("");
   const [showPopup, setShowPopup] = useState(false);
@@ -82,19 +82,6 @@ export default function Feedback() {
     setCompanyName(event.target.value);
   };
 
-  const handleGetFeedback = () => {
-    //   console.log(port);
-    //   axios
-    //     .get(`https://localhost:${port}/getFeedback/${account}/${companyName}`)
-    //     .then((res) => {
-    //       console.log(res.data);
-    //       setFeedback(res.data);
-    //     });
-    //   setShowPopup(true);
-    setFeedback(getFeedback_response);
-    setShowPopup(true);
-  };
-
   const handlePopupClose = () => {
     setShowPopup(false);
   };
@@ -102,27 +89,53 @@ export default function Feedback() {
   return (
     <PageTemplate>
       <Stack direction="column">
-        <h1>Licenses</h1>
-        <Table data={licenses} />
-
+        <div
+          class="modal fade"
+          id="feedbackModal"
+          tabindex="-1"
+          aria-labelledby="feedbackModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg" style={{ width: "650px" }}>
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="feedbackModalLabel">
+                  Feedback
+                </h1>
+                <p></p>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <Feedback companyName={companyName} account={account} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ms-4 mt-4">
+          <h1>Licenses</h1>
+          <Table data={licenses} />
+        </div>
         <input
+          class="form-control ms-4 my-4"
+          style={{ width: "400px" }}
           type="text"
           value={companyName}
           onChange={handleInputChange}
-          placeholder="Enter Company Name..."
+          placeholder="Enter Company Name for feedback..."
         />
-        <button onClick={handleGetFeedback}>Search</button>
-        {showPopup && (
-          <div className="popup">
-            <div className="popup-content">
-              <button className="close-btn" onClick={handlePopupClose}>
-                X
-              </button>
-              <h1>Feedback.</h1>
-              <Table data={feedback} />
-            </div>
-          </div>
-        )}
+        <button
+          class="btn btn-primary ms-4 mb-4"
+          data-bs-toggle="modal"
+          data-bs-target="#feedbackModal"
+          style={{ width: "250px" }}
+        >
+          Search
+        </button>
       </Stack>
     </PageTemplate>
   );

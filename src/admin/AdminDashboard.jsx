@@ -48,7 +48,7 @@ const AdminDashboard = () => {
   }, [account1]);
 
   return (
-    <PageTemplate>
+    <PageTemplate flag={true}>
       <Stack direction="column" className={styles.stackContainer}>
         <h2 class="mx-3">Admin Dashboard</h2>
         <br />

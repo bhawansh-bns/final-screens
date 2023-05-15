@@ -3,7 +3,7 @@ import Button from "../button/Button";
 import { FaBars } from "react-icons/fa";
 import styles from "./SidebarStyles.module.css";
 
-const Sidebar = () => {
+const Sidebar = ({ flag }) => {
   return (
     // <div>
     //   <span class="border border-primary-subtle">
@@ -91,6 +91,7 @@ const Sidebar = () => {
         </svg> */}
         <span class="fs-4">Menu</span>
       </a>
+
       <ul class="nav nav-pills p-3 flex-column mb-auto">
         <li class="nav-item">
           <a href="#" class="nav-link link-body-emphasis">
@@ -108,21 +109,25 @@ const Sidebar = () => {
             Home
           </a>
         </li>
-        <li class="nav-item text-nowrap">
-          <a href="/feedback" class="nav-link text-black">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="black"
-              class="bi bi-chat-dots-fill"
-              viewBox="0 0 16 16"
-            >
-              <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-            </svg>{" "}
-            Feedback and licenses
-          </a>
-        </li>
+        {flag ? (
+          <li class="nav-item text-nowrap">
+            <a href="/feedback" class="nav-link text-black">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="black"
+                class="bi bi-chat-dots-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+              </svg>{" "}
+              Feedback and licenses
+            </a>
+          </li>
+        ) : (
+          <div />
+        )}
         <li class="nav-item text-nowrap">
           <a href="#" class="nav-link text-black">
             <svg
