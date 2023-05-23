@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 
-function CollateFeedbackLicenseGrant({ companyName, account }) {
+function CollateFeedbackLicenseGrant({ companyName, account, stage }) {
   const [adminFeedback, setAdminFeedback] = useState("");
   const [enable, setEnable] = useState(false);
 
@@ -42,23 +42,35 @@ function CollateFeedbackLicenseGrant({ companyName, account }) {
     //   });
   };
 
+  useEffect(() => {
+    console.log(stage);
+    stage == "under_review" || stage == "submitted"
+      ? setEnable(false)
+      : setEnable(true);
+  }, [account, stage]);
+
   return (
     <div>
-      <input
-        class="form-control my-4"
-        style={{ width: 300 }}
-        type="text"
-        value={adminFeedback}
-        onChange={handleAdminFeedbackInputChange}
-        placeholder="Enter Admin Feedback..."
-      />
-
-      <button class="btn btn-primary me-2" onClick={handleCollateFeedback}>
-        Collate Feedback
-      </button>
-      <button class="btn btn-success ms-2" onClick={handleLicenseGrant}>
-        License Grant
-      </button>
+      {enable ? (
+        <div>
+          <input
+            class="form-control my-4"
+            style={{ width: 300 }}
+            type="text"
+            value={adminFeedback}
+            onChange={handleAdminFeedbackInputChange}
+            placeholder="Enter Admin Feedback..."
+          />
+          <button class="btn btn-primary me-2" onClick={handleCollateFeedback}>
+            Collate Feedback
+          </button>
+          <button class="btn btn-success ms-2" onClick={handleLicenseGrant}>
+            License Grant
+          </button>
+        </div>
+      ) : (
+        <div />
+      )}
     </div>
   );
 }

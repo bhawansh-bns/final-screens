@@ -41,7 +41,8 @@ function Search(props) {
             value={value}
             onChange={onChange}
             onFocus={openDropdown}
-            placeholder="Enter Name..."
+            placeholder="Enter reviewer username.."
+            style={{ width: "300px" }}
           />
           <button class="btn btn-danger mx-2" onClick={closeDropdown}>
             Clear

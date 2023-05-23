@@ -13,10 +13,14 @@ const Cards = ({ data, excludeColumns = [], account }) => {
     (key) => !excludeColumns.includes(key)
   );
   const [companyName, setCompanyName] = useState("");
-  const setName = (name) => {
-    setCompanyName(name["CompanyName"]);
+  const [stage, setStage] = useState("");
+  const setName = (row) => {
+    setCompanyName(row["CompanyName"]);
     console.log(companyName);
+    setStage(row["Stage"]);
+    console.log(stage);
   };
+
   return (
     <div>
       <div
@@ -43,6 +47,7 @@ const Cards = ({ data, excludeColumns = [], account }) => {
               <SearchPopupAdmin
                 accountName={account}
                 companyName={companyName}
+                stage={stage}
               />
             </div>
           </div>

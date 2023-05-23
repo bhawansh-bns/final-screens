@@ -39,7 +39,12 @@ const ClientDashboard = () => {
     //   .catch((err) => console.error(err));
     setApplications(getApplications_response);
   };
-
+  const popoverTriggerList = document.querySelectorAll(
+    '[data-bs-toggle="popover"]'
+  );
+  const popoverList = [...popoverTriggerList].map(
+    (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+  );
   useEffect(() => {
     fetchData();
   }, [accountName]);
@@ -110,6 +115,7 @@ const ClientDashboard = () => {
           </div>
         </div>
         <h3 class="mb-4 ms-2">My Applications</h3>
+
         {/* <ListApplications applications={applications} /> */}
         <Cards class="ms-2" data={applications} excludeColumns={[]} />
       </div>

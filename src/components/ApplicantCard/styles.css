@@ -1,6 +1,11 @@
 /* .card {
   background: #ff4c68;
 } */
-.card:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+.custom-popover {
+  --bs-popover-max-width: 200px;
+  --bs-popover-border-color: var(--bs-primary);
+  --bs-popover-header-bg: var(--bs-primary);
+  --bs-popover-header-color: var(--bs-white);
+  --bs-popover-body-padding-x: 1rem;
+  --bs-popover-body-padding-y: 0.5rem;
 }

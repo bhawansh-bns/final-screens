@@ -4,7 +4,13 @@ import axios from "axios";
 import CollateFeedbackLicenseGrant from "./CollateFeedbackLicenseGrant";
 import Search from "../components/search/Search";
 
-const AdminPopup = ({ companyData, companyName, reviewerName, account }) => {
+const AdminPopup = ({
+  companyData,
+  companyName,
+  reviewerName,
+  account,
+  stage,
+}) => {
   // const [reviewerName, setReviewerName] = useState("");
   const [licenseExpiryDate, setLicenseExpiryDate] = useState(
     new Date().toISOString().substr(0, 19)
@@ -50,7 +56,7 @@ const AdminPopup = ({ companyData, companyName, reviewerName, account }) => {
           style={{ width: "280px" }}
           value={licenseExpiryDate}
           onChange={handleDateInputChange}
-          placeholder="Enter Reviewer Name to assign the application to..."
+          placeholder="Enter deadline for assignment..."
         />
       </div>
 
@@ -62,6 +68,7 @@ const AdminPopup = ({ companyData, companyName, reviewerName, account }) => {
       <CollateFeedbackLicenseGrant
         companyName={companyName}
         account={account}
+        stage={stage}
       />
     </div>
   );
