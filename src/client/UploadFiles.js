@@ -5,7 +5,6 @@ import Search from "../components/search/Search";
 import axios from "axios";
 import { getAdmins_response } from "../temp-variables/tempResponses";
 
-
 const UploadFiles = (props) => {
   const [selectedFile, setSelectedFile] = useState(null);
   let [list, setList] = useState([]);
@@ -73,12 +72,12 @@ const UploadFiles = (props) => {
               placeholder="Choose your Admin..."
             /> */}
 
-      <Search onNameChange={handleNameChange} list={list} />
+      {/* <Search onNameChange={handleNameChange} list={list} /> */}
 
       <UploadForm
         selectedFile={selectedFile}
         onFileChange={onFileChange}
-        onFileUpload={() => onFileUpload(adminName, companyName)}
+        onFileUpload={() => onFileUpload(list[0]["Username"], companyName)}
         adminName={adminName}
         companyName={companyName}
       />

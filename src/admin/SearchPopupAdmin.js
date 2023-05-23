@@ -8,7 +8,7 @@ import {
   getReviewers_response,
 } from "../temp-variables/tempResponses";
 
-function SearchPopupAdmin({ accountName, companyName }) {
+function SearchPopupAdmin({ accountName, companyName, stage }) {
   const [companyData, setCompanyData] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   let [list, setList] = useState([]);
@@ -79,6 +79,7 @@ function SearchPopupAdmin({ accountName, companyName }) {
             companyName={companyName}
             reviewerName={reviewerName}
             account={accountName}
+            stage={stage}
           />
         </div>
       </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 
-function CollateFeedbackLicenseGrant({ companyName, account }) {
+function CollateFeedbackLicenseGrant({ companyName, account, stage }) {
   const [adminFeedback, setAdminFeedback] = useState("");
   const [enable, setEnable] = useState(false);
 
