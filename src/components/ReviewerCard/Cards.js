@@ -49,7 +49,11 @@ const Cards = ({ data, excludeColumns = [], account }) => {
               ></button>
             </div>
             <div class="modal-body">
-              <SearchPopup accountName={account} companyName={companyName} />
+              {companyName ? (
+                <SearchPopup accountName={account} companyName={companyName} />
+              ) : (
+                <div />
+              )}
             </div>
           </div>
         </div>
