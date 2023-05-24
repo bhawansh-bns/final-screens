@@ -7,7 +7,6 @@ import axios from "axios";
 import styles from "./ClientDashboardStyles.module.css";
 import { useHistory } from "react-router-dom";
 import { getApplications_response } from "../temp-variables/tempResponses";
-
 const ClientDashboard = () => {
   const [applications, setApplications] = useState([]);
   const history = useHistory();

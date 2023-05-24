@@ -7,7 +7,6 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { getAssignmentsForReviewer_response } from "../temp-variables/tempResponses";
 import Cards from "../components/ReviewerCard/Cards";
-
 const ReviewerDashboard = () => {
   const [assignments, setAssignments] = useState([]);
   const history = useHistory();
